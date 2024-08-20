@@ -1,13 +1,133 @@
 baseURL = "https://JAM_SEC"
 languageCode = "en-us"
 title = "JAM_SEC"
-theme = "m10c"
+theme = "hugo-coder"
 
 [params]
   author = "JAM_SEC"
-  description = "A blog about all things technical."
+  description = "James' personal website"
+  keywords = "blog,developer,personal,cyber,security"
+  info = "Testing and personal development"
+  avatarURL = "index.jpg"
+  #gravatar = "j4mb0t@protonmail.com"
+  footerContent = "Loading ..."
+  dateFormat = "January 2, 2006"
+  hideFooter = false
+  hideCredits = false
+  hideCopyright = false
+  since = 2021
+  # Git Commit in Footer, uncomment the line below to enable it
+  commit = "https://github.com/luizdepra/hugo-coder/tree/"
+  # Right To Left, shift content direction for languagues such as Arabic
+  rtl = false
+  # Specify light/dark colorscheme
+  # Supported values:
+  # "auto" (use preference set by browser)
+  # "dark" (dark background, light foreground)
+  # "light" (light background, dark foreground) (default)
+  colorScheme = "auto"
+  # Hide the toggle button, along with the associated vertical divider
+  hideColorSchemeToggle = false
+  # Series see also post count
+  maxSeeAlsoItems = 5
+  # Enable Twemoji
+  enableTwemoji = false
+  # Custom CSS
+  customCSS = []
+  # Custom SCSS
+  customSCSS = []
+  # Custom JS
+  customJS = []
+  # If you want to implement a Content-Security-Policy, add this section
+  [params.csp]
+  childsrc = ["'self'"]
+  fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
+  formaction = ["'self'"]
+  framesrc = ["'self'"]
+  imgsrc = ["'self'"]
+  objectsrc = ["'none'"]
+  stylesrc = [
+    "'self'",
+    "'unsafe-inline'",
+    "https://fonts.googleapis.com/",
+    "https://cdn.jsdelivr.net/"
+  ]
+  scriptsrc = ["'self'", "'unsafe-inline'", "https://www.google-analytics.com"]
+  prefetchsrc = ["'self'"]
+  # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
+  connectsrc = ["'self'", "https://www.google-analytics.com"]
+
+  [taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+  [[params.social]]
+  name = "Github"
+  icon = "fa fa-github"
+  weight = 1
+  url = "https://github.com/J4MB0T"
+
+  [[params.social]]
+  name = "LinkedIn"
+  icon = "fa fa-linkedin"
+  weight = 4
+  url = "https://www.linkedin.com/in/james-bothwell-aa7884b7/"
+
+  [languages.en]
+  languageName = ":uk:"
+
+  [[languages.en.menu.main]]
+  name = "About"
+  weight = 1
+  url = "about/"
+
+  [[languages.en.menu.main]]
+  name = "Blog"
+  weight = 2
+  url = "posts/"
+
+  [[languages.en.menu.main]]
+  name = "Projects"
+  weight = 3
+  url = "projects/"
+
+  [[languages.en.menu.main]]
+  name = "Contact me"
+  weight = 5
+  url = "contact/"
+
+
 
   [[params.social]]
     icon = "github"
     name = "GitHub"
     url = "https://github.com/J4MB0T"
+
+[params.style]
+  darkestColor = "#d35050"
+  darkColor = "#212121"
+  lightColor = "#f5e3e0"
+  lightestColor = "#f5f5f5"
+  primaryColor = "#ffffff"
+
+
+
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
