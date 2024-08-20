@@ -13,7 +13,7 @@
       <link>http://localhost:1313/jam_sec/posts/pfsense/</link>
       <pubDate>Tue, 20 Aug 2024 13:28:55 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/pfsense/</guid>
-      <description></description>
+      <description>Title: My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls&amp;hellip;when the internet decides it wants to drop or you&amp;rsquo;ve made some rookie networking errors and damn, there is no longer access to any resources. Especially when the rest of your house depends on the routing you&amp;rsquo;re in control of.</description>
     </item>
     <item>
       <title>First Post</title>

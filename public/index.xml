@@ -13,7 +13,7 @@
       <link>http://localhost:1313/jam_sec/posts/pfsense/</link>
       <pubDate>Tue, 20 Aug 2024 13:28:55 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/pfsense/</guid>
-      <description></description>
+      <description>Title: My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls&amp;hellip;when the internet decides it wants to drop or you&amp;rsquo;ve made some rookie networking errors and damn, there is no longer access to any resources. Especially when the rest of your house depends on the routing you&amp;rsquo;re in control of.</description>
     </item>
     <item>
       <title>First Post</title>
@@ -27,7 +27,7 @@
       <link>http://localhost:1313/jam_sec/about/</link>
       <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/about/</guid>
-      <description>Welcome to My Blog! 🎉&#xA;This is where I plan to write about my triumphs and troubles in my cyber homelab. I aim to provide details on the projects I have worked on and new experiments I progress with.&#xA;I am a Cyber Security enthusiast with a third for tinkering in my homelab. I am forever playing with new tools and to be honest, there are a lot of projects I wish I had finished.</description>
+      <description>Welcome to My Blog! 🎉&#xA;This is where I plan to write about my triumphs and troubles in my cyber homelab. I aim to provide details on the projects I have worked on and new experiments I progress with.&#xA;About Me 👤 I am a Cyber Security enthusiast with a thirst for tinkering in my homelab. I am forever playing with new tools and to be honest, there are a lot of projects I wish I had finished.</description>
     </item>
     <item>
       <title>Contact</title>

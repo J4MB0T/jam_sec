@@ -16,19 +16,19 @@
 
 
 <meta name="author" content="JAM_SEC">
-<meta name="description" content="James&#39; personal website">
+<meta name="description" content="Title: My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls&hellip;when the internet decides it wants to drop or you&rsquo;ve made some rookie networking errors and damn, there is no longer access to any resources. Especially when the rest of your house depends on the routing you&rsquo;re in control of.">
 <meta name="keywords" content="blog,developer,personal,cyber,security">
 <meta name="fediverse:creator" content="" />
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Pfsense">
-  <meta name="twitter:description" content="James&#39; personal website">
+  <meta name="twitter:description" content="Title: My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls…when the internet decides it wants to drop or you’ve made some rookie networking errors and damn, there is no longer access to any resources. Especially when the rest of your house depends on the routing you’re in control of.">
 
 <meta property="og:url" content="http://localhost:1313/jam_sec/posts/pfsense/">
   <meta property="og:site_name" content="JAM_SEC">
   <meta property="og:title" content="Pfsense">
-  <meta property="og:description" content="James&#39; personal website">
+  <meta property="og:description" content="Title: My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls…when the internet decides it wants to drop or you’ve made some rookie networking errors and damn, there is no longer access to any resources. Especially when the rest of your house depends on the routing you’re in control of.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -164,7 +164,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              0-minute read
+              2-minute read
             </span>
           </div>
           
@@ -175,7 +175,122 @@
 
       <div class="post-content">
         
-        
+        <h2 id="title-my-journey-with-pfsense-building-a-secure-firewall">
+  Title: My Journey with pfSense: Building a Secure Firewall
+  <a class="heading-link" href="#title-my-journey-with-pfsense-building-a-secure-firewall">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls&hellip;when the internet decides it wants to drop or you&rsquo;ve made some rookie networking errors and damn, there is no longer access to any resources. Especially when the rest of your house depends on the routing you&rsquo;re in control of.</p>
+</li>
+<li>
+<p>It was time to make a change. I purchased a Qotom 350P 4 port appliance to act as my physical firewall.</p>
+</li>
+</ul>
+<h3 id="hardware-requirements">
+  Hardware Requirements
+  <a class="heading-link" href="#hardware-requirements">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Describe the hardware you used (CPU, RAM, NICs, storage).</li>
+<li>Explain how these requirements may vary based on your specific use case.</li>
+</ul>
+<h3 id="installation-and-basic-setup">
+  Installation and Basic Setup
+  <a class="heading-link" href="#installation-and-basic-setup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li><strong>Installing pfSense:</strong>
+<ul>
+<li>Walk through the installation process.</li>
+<li>Mention any challenges you faced or interesting observations.</li>
+</ul>
+</li>
+<li><strong>Initial Configuration:</strong>
+<ul>
+<li>Set up LAN and WAN interfaces.</li>
+<li>Configure DNS settings.</li>
+<li>Discuss any customizations you made.</li>
+</ul>
+</li>
+</ol>
+<h3 id="firewall-rules">
+  Firewall Rules
+  <a class="heading-link" href="#firewall-rules">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p><strong>Outbound Rules (LAN):</strong></p>
+<ul>
+<li>Allow DNS access (TCP/UDP 53).</li>
+<li>Enable web browsing (HTTP: TCP 80, HTTPS: TCP 443).</li>
+<li>Access FTP, SMTP, POP3, and IMAP if needed.</li>
+<li>Allow remote administration (Terminal server: TCP/UDP 3389).</li>
+<li>Access Windows shares on the DMZ (NETBIOS/Microsoft-DS).</li>
+</ul>
+</li>
+<li>
+<p><strong>Outbound Rules (DMZ):</strong></p>
+<ul>
+<li>Allow HTTP (TCP 80) and HTTPS (TCP 443) for servers.</li>
+<li>Configure DNS access.</li>
+<li>Allow NTP (UDP 123) for time synchronization.</li>
+</ul>
+</li>
+</ol>
+<h3 id="security-considerations">
+  Security Considerations
+  <a class="heading-link" href="#security-considerations">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Discuss best practices for pfSense firewall rules⁵.</li>
+<li>Explain how you balanced security and usability.</li>
+</ul>
+<h3 id="personal-experience">
+  Personal Experience
+  <a class="heading-link" href="#personal-experience">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Share any challenges, victories, or surprises you encountered during the setup.</li>
+<li>Highlight moments when you felt accomplished or learned something new.</li>
+</ul>
+<h3 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Recap your journey with pfSense.</li>
+<li>Encourage readers to explore pfSense for their own network security needs.</li>
+</ul>
+
       </div>
 
 
