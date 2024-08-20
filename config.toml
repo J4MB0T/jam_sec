@@ -1,0 +1,13 @@
+baseURL = "https://JAM_SEC"
+languageCode = "en-us"
+title = "JAM_SEC"
+theme = "m10c"
+
+[params]
+  author = "JAM_SEC"
+  description = "A blog about all things technical."
+
+  [[params.social]]
+    icon = "github"
+    name = "GitHub"
+    url = "https://github.com/J4MB0T"
