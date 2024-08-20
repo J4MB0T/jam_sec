@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Set your commit message
-COMMIT_MESSAGE="Your custom commit message here"
+# Prompt the user for a commit message
+read -p "Enter your commit message: " COMMIT_MESSAGE
 
 # Add all changes
 git add -A
