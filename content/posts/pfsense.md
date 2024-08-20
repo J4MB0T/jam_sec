@@ -4,9 +4,7 @@ date = 2024-08-20T13:28:55Z
 draft = false
 +++
 
-
-
-## Title: My Journey with pfSense: Building a Secure Firewall
+## My Journey with pfSense: Building a Secure Firewall
 
 ### Introduction
 - I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls. For example, when the "internet" decides it wants to drop because you've made some rookie networking errors 👀 . Especially when the rest of your house depends on the routing you're in control of. 
