@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JAM_SEC</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1313/jam_sec/</link>
     <description>Recent content on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 20 Aug 2024 09:13:36 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/jam_sec/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
+      <link>http://localhost:1313/jam_sec/posts/first-post/</link>
       <pubDate>Tue, 20 Aug 2024 09:13:36 +0000</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
+      <guid>http://localhost:1313/jam_sec/posts/first-post/</guid>
       <description>This is my first post! Hello world!</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:1313/jam_sec/about/</link>
       <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:1313/jam_sec/about/</guid>
       <description>Welcome to My Blog! 🎉&#xA;This is where I plan to write about my triumphs and troubles in my cyber homelab. I aim to provide details on the projects I have worked on and new experiments I progress with.&#xA;I am a Cyber Security enthusiast with a third for tinkering in my homelab. I am forever playing with new tools and to be honest, there are a lot of projects I wish I had finished.</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>http://localhost:1313/jam_sec/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>http://localhost:1313/jam_sec/contact/</guid>
       <description>Follow me https://github.com/J4MB0T</description>
     </item>
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/projects/</link>
+      <link>http://localhost:1313/jam_sec/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/</guid>
+      <guid>http://localhost:1313/jam_sec/projects/</guid>
       <description>🛠️ My Projects Ticklist Link to heading 🔧 Infrastructure Projects Link to heading 🟢 pfSense Firewall Link to heading ☑️ Status: Ongoing&#xA;🟢 Synology NAS Link to heading ☑️ Purpose: Backup of all Virtual Machines&#xA;☑️ Status: Implemented&#xA;🟢 WD NAS Link to heading ☑️ Purpose: PLEX Media Server ☑️ Status: Implemented&#xA;🟢 iDRAC R710 Link to heading ☑️ Purpose: Used as an Ethical Hacking environment running on Proxmox ☑️ Status: Completed</description>
     </item>
   </channel>
