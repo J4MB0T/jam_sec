@@ -36,7 +36,7 @@ slug = "projects"
 ### 🔵 **Splunk Log Management**  
 ☑️ &nbsp;*Status:* Running
 
-### 🔵 **Zabbix System Management**  
+### 🔴 **Zabbix System Management**  
 ☑️ &nbsp;*Status:* Retired
 
 ### 🔵 **Portainer Docker**  
@@ -54,7 +54,7 @@ slug = "projects"
 ### 🔵 **Nessus**  
 ☑️ &nbsp;*Status:* Configured
 
-### 🔵 **VEEAM**  
+### 🔴 **VEEAM**  
 ☑️ &nbsp;*Purpose:* Backup of all production Virtual Machines  
 ☑️ &nbsp;*Status:* Retired
 
@@ -62,7 +62,7 @@ slug = "projects"
 
 ## 🌐 **Additional Services**
 
-### 🟣 **Nextcloud**  
+### 🔴 **Nextcloud**  
 ☑️ &nbsp;*Purpose:* Private cloud for files  
 ☑️ &nbsp;*Status:* Retired, Synology NAS now used
 
