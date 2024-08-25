@@ -3,7 +3,7 @@
 
 <head><script src="/jam_sec/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=jam_sec/livereload" data-no-instant defer></script>
   <title>
-  Posts · JAM_SEC
+  Hack The Box · JAM_SEC
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,26 +16,32 @@
 
 
 <meta name="author" content="JAM_SEC">
-<meta name="description" content="James&#39; personal website">
+<meta name="description" content="A page dedicated to quick and easy commands used.">
 <meta name="keywords" content="blog,developer,personal,cyber,security">
 <meta name="fediverse:creator" content="" />
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Posts">
-  <meta name="twitter:description" content="James&#39; personal website">
+  <meta name="twitter:title" content="Hack The Box">
+  <meta name="twitter:description" content="A page dedicated to quick and easy commands used.">
 
-<meta property="og:url" content="http://localhost:1313/jam_sec/posts/">
+<meta property="og:url" content="http://localhost:1313/jam_sec/posts/hackthebox/">
   <meta property="og:site_name" content="JAM_SEC">
-  <meta property="og:title" content="Posts">
-  <meta property="og:description" content="James&#39; personal website">
+  <meta property="og:title" content="Hack The Box">
+  <meta property="og:description" content="A page dedicated to quick and easy commands used.">
   <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-25T13:38:26+00:00">
+    <meta property="article:modified_time" content="2024-08-25T13:38:26+00:00">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Penetration-Testing">
+    <meta property="article:tag" content="Linux">
 
 
 
 
-<link rel="canonical" href="http://localhost:1313/jam_sec/posts/">
+<link rel="canonical" href="http://localhost:1313/jam_sec/posts/hackthebox/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -76,7 +82,6 @@
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link rel="alternate" type="application/rss+xml" href="/jam_sec/posts/index.xml" title="JAM_SEC" />
 
 
 
@@ -142,36 +147,106 @@
 
     <div class="content">
       
-  <section class="container list">
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="http://localhost:1313/jam_sec/posts/">
-          Posts
-        </a>
-      </h1>
-    </header>
-    
-    <ul><li>
-  <span class="date">August 25, 2024</span>
-  <a class="title" href="/jam_sec/posts/hackthebox/">Hack The Box</a>
-</li>
-<li>
-  <span class="date">August 20, 2024</span>
-  <a class="title" href="/jam_sec/posts/pfsense/">pfSense - Building a Secure Firewall</a>
-</li>
-<li>
-  <span class="date">August 20, 2024</span>
-  <a class="title" href="/jam_sec/posts/first-post/">First Post</a>
-</li>
-</ul>
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/jam_sec/posts/hackthebox/">
+              Hack The Box
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-08-25T13:38:26Z">
+                August 25, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/jam_sec/tags/security/">Security</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/penetration-testing/">Penetration-Testing</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/linux/">Linux</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I have decided to start progressing on Hack The Box while I have some free time to sharpen my skills and knowledge.</p>
+<h2 id="useful-commands">
+  Useful commands
+  <a class="heading-link" href="#useful-commands">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h4 id="nmap">
+  Nmap
+  <a class="heading-link" href="#nmap">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><code>nmap -F IPADDRESS</code> - Fast scan the top 100 ports
+<code>nmap -sV IPADDRESS</code> - Service version detection
+<code>nmap -O IPADDRESS</code> - Operating system detection</p>
+<h4 id="smb">
+  SMB
+  <a class="heading-link" href="#smb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><code>smbclient -L</code> is used to list file shares.</p>
+<p><code>smbclient -L \\IPADDRESS -U anonymous</code>
+Use tag &ldquo;-W&rdquo; to specify the workgroup.</p>
+<p>Use <code>get</code> &amp; <code>put</code> retrospecifively to download/upload files.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
 
     
-
-
-
-
-
-
   </section>
 
     </div>
