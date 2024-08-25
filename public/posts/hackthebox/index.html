@@ -215,7 +215,9 @@
 </h4>
 <p><code>nmap -F IPADDRESS</code> - Fast scan the top 100 ports
 <code>nmap -sV IPADDRESS</code> - Service version detection
-<code>nmap -O IPADDRESS</code> - Operating system detection</p>
+<code>nmap -O IPADDRESS</code> - Operating system detection
+<code>nmap -sT IPADDRESS</code>- TCP Scan
+<code>nmap -p- IPADDRESS</code>- Scan all ports</p>
 <h4 id="smb">
   SMB
   <a class="heading-link" href="#smb">
@@ -227,6 +229,17 @@
 <p><code>smbclient -L \\IPADDRESS -U anonymous</code>
 Use tag &ldquo;-W&rdquo; to specify the workgroup.</p>
 <p>Use <code>get</code> &amp; <code>put</code> retrospecifively to download/upload files.</p>
+<h4 id="redis">
+  Redis
+  <a class="heading-link" href="#redis">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><code>redis-cli -u redis://host:port</code> - To connect
+<code>redis-cli -h</code> - To get hostname</p>
+<p>Once connected, run the <code>info</code> command to get the information about the system.</p>
+<p>Run the <code>select</code> command to enter the database.</p>
 
       </div>
 
