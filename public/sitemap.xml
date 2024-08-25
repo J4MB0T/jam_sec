@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/jam_sec/</loc>
-    <lastmod>2024-08-20T13:28:55+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/posts/pfsense/</loc>
-    <lastmod>2024-08-20T13:28:55+00:00</lastmod>
+    <lastmod>2024-12-18T04:10:42+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/posts/</loc>
+    <lastmod>2024-12-18T04:10:42+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/posts/pfsense/</loc>
     <lastmod>2024-08-20T13:28:55+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/posts/first-post/</loc>
