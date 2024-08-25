@@ -24,7 +24,7 @@ draft = false
 ### Installation and Basic Setup
 1. **Installing pfSense:**
    - Installation was fairly straightforward and there are tons of tutorials on YouTube and the web running through this setup. Setting it up in esxi is a little more challenging but with some tinkering it is possible. As I mentioned before, virtualising this piece of your network can lead you down a rabbit hole of issues I found. 
-   - pfSense is scary when you're new to it, there is a lot to take in. In comparision, I did give OPNSense for a few days and Sophos XG, I soon realised that pfSense is just so much granular. 
+   - pfSense is scary when you're new to it, there is a lot to take in. In comparision, I did give OPNSense for a few days and Sophos XG, however I soon realised that pfSense is just so much granular. 
 
 2. **Initial Configuration:**
    - For my homelab, I wanted to be able to segregate networks and be able to perform sandboxing. It was vital I got these right and performed enough testing to make sure the networks were isolated. I started off with a few VLANs:

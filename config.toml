@@ -89,8 +89,13 @@ theme = "hugo-coder"
   url = "posts/"
 
   [[languages.en.menu.main]]
-  name = "Projects"
+  name = "Hack The Box"
   weight = 3
+  url = "htb/"
+
+  [[languages.en.menu.main]]
+  name = "Projects"
+  weight = 4
   url = "projects/"
 
   [[languages.en.menu.main]]

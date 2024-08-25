@@ -69,7 +69,7 @@ slug = "projects"
 ### 🟣 **Ansible**  
 ☑️ &nbsp;*Status:* Scripts ready
 
-### 🟣 **Home Assistant**  
+### 🟣 **Home Assistant & Frigate**  
 ☑️ &nbsp;*Status:* Automation set
 
 ### 🟣 **Hugo**  

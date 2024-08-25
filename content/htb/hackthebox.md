@@ -1,5 +1,5 @@
 ---
-title: "Hack The Box"
+title: "Useful Notes"
 date: 2024-08-25T13:38:26Z
 draft: false
 author: "James"
