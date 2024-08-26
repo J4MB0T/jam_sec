@@ -6,7 +6,6 @@
     <description>Recent content on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-<<<<<<< HEAD
     <lastBuildDate>Mon, 26 Aug 2024 20:47:22 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,16 +14,13 @@
       <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/nmap-dashboard/</guid>
       <description>How I created an Nmap scanner to display results in a webpage</description>
-=======
-    <lastBuildDate>Sun, 25 Aug 2024 19:12:12 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/jam_sec/index.xml" rel="self" type="application/rss+xml" />
+    </item>
     <item>
       <title>Msfconsole</title>
       <link>http://localhost:1313/jam_sec/htb/msfconsole/</link>
       <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/htb/msfconsole/</guid>
       <description>Tips on using msfconsole</description>
->>>>>>> da90472d41596d867e724cbd415e20ea16e33898
     </item>
     <item>
       <title>Useful Notes</title>
@@ -38,7 +34,7 @@
       <link>http://localhost:1313/jam_sec/posts/pfsense/</link>
       <pubDate>Tue, 20 Aug 2024 13:28:55 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/pfsense/</guid>
-      <description>My Journey with pfSense: Building a Secure Firewall Introduction I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls. For example, when the &amp;ldquo;internet&amp;rdquo; decides it wants to drop because you&amp;rsquo;ve made some rookie networking errors 👀 . Especially when the rest of your house depends on the routing you&amp;rsquo;re in control of.&#xA;It was time to make a change. I purchased a Qotom 350P 4 port appliance to act as my physical firewall.</description>
+      <description>My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls. For example, when the &amp;ldquo;internet&amp;rdquo; decides it wants to drop because you&amp;rsquo;ve made some rookie networking errors 👀 . Especially when the rest of your house depends on the routing you&amp;rsquo;re in control of.&#xA;It was time to make a change.</description>
     </item>
     <item>
       <title>First Post</title>
@@ -66,7 +62,7 @@
       <link>http://localhost:1313/jam_sec/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/projects/</guid>
-      <description>🛠️ My Projects Ticklist 🔧 Infrastructure Projects 🟢 pfSense Firewall ☑️ Status: Ongoing&#xA;🟢 Synology NAS ☑️ Purpose: Backup of all Virtual Machines&#xA;☑️ Status: Implemented&#xA;🟢 WD NAS ☑️ Purpose: PLEX Media Server ☑️ Status: Implemented&#xA;🟢 iDRAC R710 ☑️ Purpose: Used as an Ethical Hacking environment running on Proxmox ☑️ Status: Completed&#xA;🟢 Dell T420 ☑️ Purpose: Primary server for testing environment&#xA;☑️ Status: In Progress&#xA;🟢 TP Link L2 Managed Switch ☑️ Status: Implemented</description>
+      <description>🛠️ My Projects Ticklist Link to heading 🔧 Infrastructure Projects Link to heading 🟢 pfSense Firewall Link to heading ☑️ Status: Ongoing&#xA;🟢 Synology NAS Link to heading ☑️ Purpose: Backup of all Virtual Machines&#xA;☑️ Status: Implemented&#xA;🟢 WD NAS Link to heading ☑️ Purpose: PLEX Media Server ☑️ Status: Implemented&#xA;🟢 iDRAC R710 Link to heading ☑️ Purpose: Used as an Ethical Hacking environment running on Proxmox ☑️ Status: Completed</description>
     </item>
   </channel>
 </rss>

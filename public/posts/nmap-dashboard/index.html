@@ -425,7 +425,20 @@ And exit:
 </h2>
 <p><code>python3 nmap_scan.py</code></p>
 <p><code>python3 app.py</code></p>
-
+<h2 id="find-the-port-scan-in-splunk">
+  Find the port scan in Splunk
+  <a class="heading-link" href="#find-the-port-scan-in-splunk">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<pre tabindex="0"><code>index=* sourcetype=&#34;pfsense:filterlog&#34;
+| stats count by src_ip, dest_ip, dest_port
+| eventstats dc(dest_port) as port_count by src_ip, dest_ip
+| where port_count &gt; 20
+| table src_ip, dest_ip, port_count
+| sort -port_count
+</code></pre>
       </div>
 
 

@@ -239,3 +239,14 @@ And exit:
 ```python3 nmap_scan.py```
 
 ```python3 app.py```
+
+## Find the port scan in Splunk
+
+```
+index=* sourcetype="pfsense:filterlog"
+| stats count by src_ip, dest_ip, dest_port
+| eventstats dc(dest_port) as port_count by src_ip, dest_ip
+| where port_count > 20
+| table src_ip, dest_ip, port_count
+| sort -port_count
+```
