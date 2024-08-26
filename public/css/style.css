@@ -1,0 +1,30 @@
+/* Style for code blocks */
+pre code {
+    display: block;
+    padding: 1em;
+    border-radius: 5px;
+    background: #282c34; /* Dark background for code blocks */
+    color: #abb2bf; /* Light text color */
+    overflow-x: auto; /* Horizontal scroll if content overflows */
+    position: relative; /* Position for the copy button */
+    margin: 0;
+}
+
+/* Style for the copy button */
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #61afef; /* Blue background */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1; /* Ensure the button is on top */
+}
+
+.copy-button:hover {
+    background: #528bff; /* Darker blue on hover */
+}

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/jam_sec/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=jam_sec/livereload" data-no-instant defer></script>
+  <title>
+  Nmap Dashboard Creation · JAM_SEC
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="JAM_SEC">
+<meta name="description" content="How I created an Nmap scanner to display results in a webpage">
+<meta name="keywords" content="blog,developer,personal,cyber,security">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nmap Dashboard Creation">
+  <meta name="twitter:description" content="How I created an Nmap scanner to display results in a webpage">
+
+<meta property="og:url" content="http://localhost:1313/jam_sec/posts/nmap-dashboard/">
+  <meta property="og:site_name" content="JAM_SEC">
+  <meta property="og:title" content="Nmap Dashboard Creation">
+  <meta property="og:description" content="How I created an Nmap scanner to display results in a webpage">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-26T20:47:22+00:00">
+    <meta property="article:modified_time" content="2024-08-26T20:47:22+00:00">
+    <meta property="article:tag" content="Nmap">
+    <meta property="article:tag" content="Network Scanner">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/jam_sec/posts/nmap-dashboard/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/jam_sec/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/jam_sec/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/jam_sec/">
+      JAM_SEC
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/htb/">Hack The Box</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/jam_sec/posts/nmap-dashboard/">
+              Nmap Dashboard Creation
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-08-26T20:47:22Z">
+                August 26, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/jam_sec/tags/nmap/">Nmap</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/network-scanner/">Network Scanner</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="create-the-app">
+  Create the App
+  <a class="heading-link" href="#create-the-app">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<pre tabindex="0"><code>from flask import Flask, render_template
+import pymysql
+
+app = Flask(__name__)
+
+# Database connection
+def get_db_connection():
+    connection = pymysql.connect(
+        host=&#39;localhost&#39;,
+        user=&#39;USER&#39;,
+        password=&#39;PASSWORD&#39;,
+        database=&#39;nmap_scans&#39;,
+        cursorclass=pymysql.cursors.DictCursor
+    )
+    return connection
+
+@app.route(&#39;/&#39;)
+def index():
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    
+    # Fetch scan results
+    cursor.execute(&#39;SELECT * FROM scans ORDER BY scanned_at DESC&#39;)
+    scans = cursor.fetchall()
+    
+    connection.close()
+    return render_template(&#39;index.html&#39;, scans=scans)
+
+if __name__ == &#39;__main__&#39;:
+    app.run(host=&#39;0.0.0.0&#39;, port=5000)
+</code></pre><h2 id="create-the-nmap-scanner">
+  Create the Nmap scanner
+  <a class="heading-link" href="#create-the-nmap-scanner">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<pre tabindex="0"><code>import pymysql
+import subprocess
+import json
+
+# Database connection
+connection = pymysql.connect(
+    host=&#39;localhost&#39;,
+    user=&#39;USER&#39;,
+    password=&#39;PASSWORD&#39;,
+    database=&#39;nmap_scans&#39;,
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+def parse_nmap_output(output):
+    # Dummy parser - you need to parse your nmap output appropriately
+    results = {
+        &#39;ip&#39;: &#39;&#39;,
+        &#39;hostname&#39;: &#39;&#39;,
+        &#39;status&#39;: &#39;&#39;,
+        &#39;os_detection&#39;: &#39;&#39;,
+        &#39;service_versions&#39;: &#39;&#39;,
+        &#39;open_ports&#39;: &#39;&#39;,
+        &#39;services&#39;: &#39;&#39;,
+        &#39;scan_type&#39;: &#39;&#39;,
+        &#39;traceroute&#39;: &#39;&#39;,
+    }
+    # Parse your actual nmap output here
+    return results
+
+def insert_scan_results(results):
+    try:
+        with connection.cursor() as cursor:
+            sql = &#34;&#34;&#34;INSERT INTO scan_results 
+                     (ip, hostname, status, os_detection, service_versions, open_ports, services, scan_type, traceroute)
+                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)&#34;&#34;&#34;
+            cursor.execute(sql, (results[&#39;ip&#39;], results[&#39;hostname&#39;], results[&#39;status&#39;],
+                                 results[&#39;os_detection&#39;], results[&#39;service_versions&#39;],
+                                 results[&#39;open_ports&#39;], results[&#39;services&#39;],
+                                 results[&#39;scan_type&#39;], results[&#39;traceroute&#39;]))
+        connection.commit()
+    finally:
+        connection.close()
+
+# Run the nmap scan
+nmap_command = &#34;nmap -A -T4 -p- 192.168.1.0/24&#34;
+result = subprocess.run(nmap_command, shell=True, capture_output=True, text=True)
+
+# Parse and insert results
+scan_results = parse_nmap_output(result.stdout)
+insert_scan_results(scan_results)
+</code></pre><h2 id="sql-database">
+  SQL Database
+  <a class="heading-link" href="#sql-database">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Login to the database:</p>
+<p><code>mysql -u USER -p</code></p>
+<p>Connect the to the required table:</p>
+<p><code>USE nmap_scans;</code></p>
+<p>Add the following fields:</p>
+<pre tabindex="0"><code class="language-Add" data-lang="Add">CREATE TABLE scans (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip VARCHAR(45),                  -- IP address (supports both IPv4 and IPv6)
+    status VARCHAR(20),              -- Host status (e.g., up or down)
+    os VARCHAR(100),                 -- Detected operating system
+    ports TEXT,                      -- Open ports (list of ports)
+    services TEXT,                   -- Services running on the open ports
+    scan_type VARCHAR(50),           -- Type of scan (e.g., full scan, version scan)
+    scanned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Timestamp of when the scan was performed
+);
+</code></pre><p>Added these extra fields later:</p>
+<pre tabindex="0"><code class="language-ALTER" data-lang="ALTER">ADD COLUMN hostname VARCHAR(255),                  -- Hostname from reverse DNS resolution
+ADD COLUMN os_detection TEXT,                      -- Detailed OS detection results
+ADD COLUMN service_versions TEXT,                   -- Versions of detected services
+ADD COLUMN traceroute TEXT,                         -- Traceroute information
+ADD COLUMN hostnames TEXT;                          -- Additional hostnames (if multiple)```
+
+And exit:
+</code></pre><p><code>EXIT;</code></p>
+<h2 id="create-the-webpage-in-templatesindexhtml">
+  Create the webpage in /templates/index.html
+  <a class="heading-link" href="#create-the-webpage-in-templatesindexhtml">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
+    &lt;title&gt;Nmap Scan Results&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: &#39;Arial&#39;, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background: linear-gradient(90deg, #ff6f61, #ffcc00);
+            color: white;
+            padding: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #ff6f61;
+            color: white;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #ffcc00;
+            cursor: pointer;
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        td {
+            font-size: 0.9em;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Nmap Scan Results&lt;/h1&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;ID&lt;/th&gt;
+                &lt;th&gt;IP Address&lt;/th&gt;
+                &lt;th&gt;Hostname&lt;/th&gt;
+                &lt;th&gt;Status&lt;/th&gt;
+                &lt;th&gt;OS Detection&lt;/th&gt;
+                &lt;th&gt;Service Versions&lt;/th&gt;
+                &lt;th&gt;Open Ports&lt;/th&gt;
+                &lt;th&gt;Services&lt;/th&gt;
+                &lt;th&gt;Scan Type&lt;/th&gt;
+                &lt;th&gt;Traceroute&lt;/th&gt;
+                &lt;th&gt;Scanned At&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            {% for scan in scans %}
+            &lt;tr&gt;
+                &lt;td&gt;{{ scan.id }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.ip }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.hostname }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.status }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.os_detection }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.service_versions }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.open_ports }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.services }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.scan_type }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.traceroute }}&lt;/td&gt;
+                &lt;td&gt;{{ scan.scanned_at }}&lt;/td&gt;
+            &lt;/tr&gt;
+            {% endfor %}
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="run-the-nmap-scanner-then-the-webserver">
+  Run the Nmap scanner then the webserver
+  <a class="heading-link" href="#run-the-nmap-scanner-then-the-webserver">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>python3 nmap_scan.py</code></p>
+<p><code>python3 app.py</code></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2021 -
+    
+    2024
+     JAM_SEC 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/jam_sec/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

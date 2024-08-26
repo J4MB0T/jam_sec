@@ -40,3 +40,7 @@ Use ```get``` & ```put``` retrospecifively to download/upload files.
 Once connected, run the ```info``` command to get the information about the system. 
 
 Run the ```select``` command to enter the database.
+
+#### Samba
+
+```smbmap -H 10.10.10.3``` - Find shares

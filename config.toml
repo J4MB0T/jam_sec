@@ -117,6 +117,9 @@ theme = "hugo-coder"
   lightestColor = "#f5f5f5"
   primaryColor = "#ffffff"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
 
 
 
