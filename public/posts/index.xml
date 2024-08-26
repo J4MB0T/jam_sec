@@ -20,7 +20,7 @@
       <link>http://localhost:1313/jam_sec/posts/pfsense/</link>
       <pubDate>Tue, 20 Aug 2024 13:28:55 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/pfsense/</guid>
-      <description>My Journey with pfSense: Building a Secure Firewall Link to heading Introduction Link to heading I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls. For example, when the &amp;ldquo;internet&amp;rdquo; decides it wants to drop because you&amp;rsquo;ve made some rookie networking errors 👀 . Especially when the rest of your house depends on the routing you&amp;rsquo;re in control of.&#xA;It was time to make a change.</description>
+      <description>My Journey with pfSense: Building a Secure Firewall Introduction I decided to implement a physical pfSense firewall after virtualising it for some years. Virtualising it had its downfalls. For example, when the &amp;ldquo;internet&amp;rdquo; decides it wants to drop because you&amp;rsquo;ve made some rookie networking errors 👀 . Especially when the rest of your house depends on the routing you&amp;rsquo;re in control of.&#xA;It was time to make a change. I purchased a Qotom 350P 4 port appliance to act as my physical firewall.</description>
     </item>
     <item>
       <title>First Post</title>

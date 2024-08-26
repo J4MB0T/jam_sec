@@ -6,7 +6,11 @@
     <description>Recent content in Tags on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
+<<<<<<< HEAD
     <lastBuildDate>Mon, 26 Aug 2024 20:47:22 +0000</lastBuildDate>
+=======
+    <lastBuildDate>Sun, 25 Aug 2024 19:12:12 +0000</lastBuildDate>
+>>>>>>> da90472d41596d867e724cbd415e20ea16e33898
     <atom:link href="http://localhost:1313/jam_sec/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Network Scanner</title>
@@ -25,21 +29,28 @@
     <item>
       <title>Linux</title>
       <link>http://localhost:1313/jam_sec/tags/linux/</link>
-      <pubDate>Sun, 25 Aug 2024 13:38:26 +0000</pubDate>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metasplitable</title>
+      <link>http://localhost:1313/jam_sec/tags/metasplitable/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/metasplitable/</guid>
       <description></description>
     </item>
     <item>
       <title>Penetration-Testing</title>
       <link>http://localhost:1313/jam_sec/tags/penetration-testing/</link>
-      <pubDate>Sun, 25 Aug 2024 13:38:26 +0000</pubDate>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/penetration-testing/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
       <link>http://localhost:1313/jam_sec/tags/security/</link>
-      <pubDate>Sun, 25 Aug 2024 13:38:26 +0000</pubDate>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/security/</guid>
       <description></description>
     </item>
