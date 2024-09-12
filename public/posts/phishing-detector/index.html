@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/jam_sec/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=jam_sec/livereload" data-no-instant defer></script>
+  <title>
+  Phishing Detector · JAM_SEC
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="JAM_SEC">
+<meta name="description" content="Email Analysis Tool">
+<meta name="keywords" content="blog,developer,personal,cyber,security">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Phishing Detector">
+  <meta name="twitter:description" content="Email Analysis Tool">
+
+<meta property="og:url" content="http://localhost:1313/jam_sec/posts/phishing-detector/">
+  <meta property="og:site_name" content="JAM_SEC">
+  <meta property="og:title" content="Phishing Detector">
+  <meta property="og:description" content="Email Analysis Tool">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-11T22:28:27+00:00">
+    <meta property="article:modified_time" content="2024-09-11T22:28:27+00:00">
+    <meta property="article:tag" content="Phishing">
+    <meta property="article:tag" content="Email">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/jam_sec/posts/phishing-detector/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/jam_sec/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/jam_sec/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/jam_sec/">
+      JAM_SEC
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/htb/">Hack The Box</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/jam_sec/posts/phishing-detector/">
+              Phishing Detector
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-09-11T22:28:27Z">
+                September 11, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              7-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/jam_sec/tags/phishing/">Phishing</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/email/">Email</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="email-analysis-tool-wip">
+  Email Analysis Tool (WIP)
+  <a class="heading-link" href="#email-analysis-tool-wip">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The Email Analysis Tool is a Python-based application designed to process, analyze, and manage email data. Built using Flask, this application enables the upload of email files, conversion of these files to JSON, and the analysis of email headers for potential security issues. This README provides an in-depth explanation of the components and functions of the application, detailing their roles and importance.</p>
+<h2 id="components">
+  Components
+  <a class="heading-link" href="#components">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="flask-application-setup">
+  Flask Application Setup
+  <a class="heading-link" href="#flask-application-setup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">send_from_directory</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">logging</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">configparser</span> <span class="kn">import</span> <span class="n">ConfigParser</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">mysql.connector</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">dkim</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">spf</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">dns.resolver</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">whois</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Setup logging</span>
+</span></span><span class="line"><span class="cl"><span class="n">log_dir</span> <span class="o">=</span> <span class="s1">&#39;logs&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">log_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">log_dir</span><span class="p">,</span> <span class="s1">&#39;app.log&#39;</span><span class="p">),</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;email_jsons&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;JSON_FOLDER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ARCHIVE_FOLDER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;archive&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Ensure the necessary folders exist</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">],</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;JSON_FOLDER&#39;</span><span class="p">],</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ARCHIVE_FOLDER&#39;</span><span class="p">],</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Thread pool executor for background tasks</span>
+</span></span><span class="line"><span class="cl"><span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="explanation">
+  Explanation
+  <a class="heading-link" href="#explanation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p><strong>Flask Setup</strong>:</p>
+<ul>
+<li>Initializes the Flask application and sets up necessary configurations.</li>
+<li>Defines folder paths for uploaded files, JSON files, and archived files.</li>
+<li>Creates these folders if they do not exist.</li>
+</ul>
+</li>
+<li>
+<p><strong>Logging</strong>:</p>
+<ul>
+<li>Configures logging to capture events and errors, storing them in a &rsquo;logs&rsquo; directory.</li>
+<li>Helps in debugging and monitoring the application’s activity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Thread Pool Executor</strong>:</p>
+<ul>
+<li>Sets up a thread pool for executing background tasks, allowing the application to process files concurrently without blocking the main thread.</li>
+</ul>
+</li>
+</ol>
+<h3 id="functions">
+  Functions
+  <a class="heading-link" href="#functions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="load_db_config-and-load_api_keys">
+  <code>load_db_config</code> and <code>load_api_keys</code>
+  <a class="heading-link" href="#load_db_config-and-load_api_keys">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">load_db_config</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;config.ini&#39;</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s1">&#39;mysql&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">db_config</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="s1">&#39;database&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">db_config</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">load_api_keys</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;config.ini&#39;</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s1">&#39;api_keys&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">api_keys</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;abuseipdb_key&#39;</span><span class="p">:</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="s1">&#39;abuseipdb_key&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;virustotal_key&#39;</span><span class="p">:</span> <span class="n">parser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="s1">&#39;virustotal_key&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">api_keys</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>load_db_config</code></strong>: Loads database configuration parameters from <code>config.ini</code>. Essential for connecting to the MySQL database.</li>
+<li><strong><code>load_api_keys</code></strong>: Loads API keys for external services (AbuseIPDB, VirusTotal) from <code>config.ini</code>. These keys are used for IP lookups.</li>
+</ul>
+<h4 id="fetch_emails">
+  <code>fetch_emails</code>
+  <a class="heading-link" href="#fetch_emails">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fetch_emails</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">db_config</span> <span class="o">=</span> <span class="n">load_db_config</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cnx</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">db_config</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">cnx</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    SELECT id, message_id, in_reply_to, `references`, received, authentication_results, received_spf, dkim_signature, list_unsubscribe, `from`, `to`, date, subject, cc, bcc, body_text, body_html
+</span></span></span><span class="line"><span class="cl"><span class="s2">    FROM emails
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">emails</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cnx</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">emails</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>fetch_emails</code></strong>: Connects to the MySQL database and retrieves email records. It uses a SQL query to select all relevant columns from the <code>emails</code> table, facilitating the analysis of these records.</li>
+</ul>
+<h4 id="analyze_email-and-related-functions">
+  <code>analyze_email</code> and Related Functions
+  <a class="heading-link" href="#analyze_email-and-related-functions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">analyze_email</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Analyze the email header information for suspicious activity.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">analysis</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;spf_result&#39;</span><span class="p">:</span> <span class="n">parse_spf_result</span><span class="p">(</span><span class="n">email</span><span class="p">[</span><span class="s1">&#39;authentication_results&#39;</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;dkim_result&#39;</span><span class="p">:</span> <span class="n">parse_dkim_result</span><span class="p">(</span><span class="n">email</span><span class="p">[</span><span class="s1">&#39;authentication_results&#39;</span><span class="p">]),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;suspicious&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;details&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;ip_address&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;ip_lookup_result&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;domain_owner&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;domain_created_recently&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;ip_registration_date&#39;</span><span class="p">:</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">spf_result</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;spf_result&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ip_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+\.\d+\.\d+\.\d+)&#39;</span><span class="p">,</span> <span class="n">spf_result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">ip_match</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ip_address</span> <span class="o">=</span> <span class="n">ip_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;ip_address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ip_address</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">api_keys</span> <span class="o">=</span> <span class="n">load_api_keys</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ip_lookup_result</span><span class="p">,</span> <span class="n">domain_owner</span> <span class="o">=</span> <span class="n">perform_ip_lookup</span><span class="p">(</span><span class="n">ip_address</span><span class="p">,</span> <span class="n">api_keys</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;ip_lookup_result&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ip_lookup_result</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;domain_owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">domain_owner</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">domain</span> <span class="o">=</span> <span class="n">get_domain_from_ip</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">domain_created_recently</span> <span class="o">=</span> <span class="n">check_domain_creation_date</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;domain_created_recently&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">domain_created_recently</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;ip_registration_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_ip_registration_date</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;spf_result&#39;</span><span class="p">]</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;dkim_result&#39;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;suspicious&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;SPF or DKIM check failed.&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">analysis</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>analyze_email</code></strong>: Analyzes the email’s SPF and DKIM results to determine its authenticity and safety. Extracts and verifies IP addresses, performs IP lookups, and checks domain creation dates.</li>
+</ul>
+<h4 id="parse_spf_result-parse_dkim_result-check_dkim">
+  <code>parse_spf_result</code>, <code>parse_dkim_result</code>, <code>check_dkim</code>
+  <a class="heading-link" href="#parse_spf_result-parse_dkim_result-check_dkim">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_spf_result</span><span class="p">(</span><span class="n">authentication_results</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Parse SPF result from the authentication results field.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spf_result</span> <span class="o">=</span> <span class="s1">&#39;N/A&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">spf_prefix</span> <span class="o">=</span> <span class="s1">&#39;spf=&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">results</span> <span class="o">=</span> <span class="n">authentication_results</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">spf_prefix</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">spf_result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">spf_prefix</span><span class="p">):]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;SPF result parsing error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">spf_result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_dkim_result</span><span class="p">(</span><span class="n">authentication_results</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Parse DKIM result from the authentication results field.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dkim_result</span> <span class="o">=</span> <span class="s1">&#39;N/A&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dkim_prefix</span> <span class="o">=</span> <span class="s1">&#39;dkim=&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">results</span> <span class="o">=</span> <span class="n">authentication_results</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">dkim_prefix</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dkim_result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">dkim_prefix</span><span class="p">):]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;DKIM result parsing error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dkim_result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_dkim</span><span class="p">(</span><span class="n">dkim_signature</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Check DKIM signature validity.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dkim_result</span> <span class="o">=</span> <span class="n">dkim</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">dkim_signature</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;Pass&#39;</span> <span class="k">if</span> <span class="n">dkim_result</span> <span class="k">else</span> <span class="s1">&#39;Fail&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;DKIM check error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;Error&#39;</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>parse_spf_result</code> and <code>parse_dkim_result</code></strong>: Extract SPF and DKIM results from the authentication results string. These results are used to verify email authenticity.</li>
+<li><strong><code>check_dkim</code></strong>: Verifies the DKIM signature to ensure the email has not been tampered with.</li>
+</ul>
+<h4 id="perform_ip_lookup-get_domain_from_ip-lookup_domain_owner-check_domain_creation_date-get_ip_registration_date">
+  <code>perform_ip_lookup</code>, <code>get_domain_from_ip</code>, <code>lookup_domain_owner</code>, <code>check_domain_creation_date</code>, <code>get_ip_registration_date</code>
+  <a class="heading-link" href="#perform_ip_lookup-get_domain_from_ip-lookup_domain_owner-check_domain_creation_date-get_ip_registration_date">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">perform_ip_lookup</span><span class="p">(</span><span class="n">ip_address</span><span class="p">,</span> <span class="n">api_keys</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Perform IP lookup using AbuseIPDB and VirusTotal.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_key</span> <span class="o">=</span> <span class="n">api_keys</span><span class="p">[</span><span class="s1">&#39;abuseipdb_key&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">virustotal_key</span> <span class="o">=</span> <span class="n">api_keys</span><span class="p">[</span><span class="s1">&#39;virustotal_key&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># AbuseIPDB Lookup</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.abuseipdb.com/api/v2/check&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;Key&#39;</span><span class="p">:</span> <span class="n">abuseipdb_key</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_params</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;ipAddress&#39;</span><span class="p">:</span> <span class="n">ip_address</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">abuseipdb_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">abuseipdb_headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">abuseipdb_params</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_data</span> <span class="o">=</span> <span class="n">abuseipdb_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;AbuseIPDB Report: </span><span class="si">{</span><span class="n">abuseipdb_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;abuseConfidenceScore&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">% confidence score&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Extract domain and owner from AbuseIPDB if available</span>
+</span></span><span class="line"><span class="cl">    <span class="n">abuseipdb_domain_owner</span> <span class="o">=</span> <span class="n">abuseipdb_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;domain&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># VirusTotal Lookup</span>
+</span></span><span class="line"><span class="cl">    <span class="n">virustotal_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://www.virustotal.com/api/v3/ip_addresses/</span><span class="si">{</span><span class="n">ip_address</span><span class="si">}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">virustotal_headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;x-apikey&#39;</span><span class="p">:</span> <span class="n">virustotal_key</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">virustotal_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">virustotal_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">virustotal_headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">virustotal_data</span> <span class="o">=</span> <span class="n">virustotal_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">virustotal_result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;VirusTotal Report: </span><span class="si">{</span><span class="n">virustotal_data</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;attributes&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;last_analysis_stats&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;malicious&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> detections&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">abuseipdb_result</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">virustotal_result</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">abuseipdb_domain_owner</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_domain_from_ip</span><span class="p">(</span><span class="n">ip_address</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Get domain name from IP address.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reverse_dns</span> <span class="o">=</span> <span class="n">dns</span><span class="o">.</span><span class="n">resolver</span><span class="o">.</span><span class="n">resolve_address</span><span class="p">(</span><span class="n">ip_address</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">reverse_dns</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">to_text</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Reverse DNS lookup error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;N/A&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">lookup_domain_owner</span><span class="p">(</span><span class="n">domain</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Get domain owner information and registration date.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">domain_info</span> <span class="o">=</span> <span class="n">whois</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">owner</span> <span class="o">=</span> <span class="n">domain_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;owner&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reg_date</span> <span class="o">=</span> <span class="n">domain_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;creation_date&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reg_date</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">reg_date</span> <span class="o">=</span> <span class="n">reg_date</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">owner</span><span class="p">,</span> <span class="n">reg_date</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Whois lookup error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;N/A&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_domain_creation_date</span><span class="p">(</span><span class="n">domain</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Check if the domain was created within the last 3 months.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">domain_info</span> <span class="o">=</span> <span class="n">whois</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">creation_date</span> <span class="o">=</span> <span class="n">domain_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;creation_date&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">creation_date</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">creation_date</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">creation_date</span> <span class="o">=</span> <span class="n">creation_date</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">creation_date</span> <span class="o">&gt;=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Domain creation date check error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_ip_registration_date</span><span class="p">(</span><span class="n">ip_address</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Get IP registration date from ARIN.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;https://whois.arin.net/rest/ip/</span><span class="si">{</span><span class="n">ip_address</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">reg_date</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;net&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;registrationDate&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">reg_date</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;N/A&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;IP registration date lookup error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;N/A&#39;</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>perform_ip_lookup</code></strong>: Utilizes AbuseIPDB and VirusTotal APIs to gather information about an IP address, such as its abuse score and detection status.</li>
+<li><strong><code>get_domain_from_ip</code></strong>: Retrieves the domain name associated with an IP address via reverse DNS lookup.</li>
+<li><strong><code>lookup_domain_owner</code></strong>: Fetches ownership details and registration date of a domain using WHOIS information.</li>
+<li><strong><code>check_domain_creation_date</code></strong>: Determines if a domain was recently created, which can be indicative of suspicious activity.</li>
+<li><strong><code>get_ip_registration_date</code></strong>: Obtains the IP registration date from ARIN, useful for assessing the IP&rsquo;s history.</li>
+</ul>
+<h3 id="routes">
+  Routes
+  <a class="heading-link" href="#routes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="heading">
+  <code>/</code>
+  <a class="heading-link" href="#heading">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>index</code></strong>: Renders the home page of the application, allowing users to navigate to upload and view results pages.</li>
+</ul>
+<h4 id="upload">
+  <code>/upload</code>
+  <a class="heading-link" href="#upload">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/upload&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">upload_file</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;email_file&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span> <span class="ow">or</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;email_file&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">filename</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;No file selected&#39;</span><span class="p">,</span> <span class="mi">400</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">email_file</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;email_file&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">email_filename</span> <span class="o">=</span> <span class="n">email_file</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34;_&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">eml_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">],</span> <span class="n">email_filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">email_file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">eml_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Uploaded file saved to </span><span class="si">{</span><span class="n">eml_path</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Process the file in a background thread</span>
+</span></span><span class="line"><span class="cl">    <span class="n">json_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;JSON_FOLDER&#39;</span><span class="p">],</span> <span class="n">email_filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;.eml&#34;</span><span class="p">,</span> <span class="s2">&#34;.json&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">run_eml_to_json_script</span><span class="p">,</span> <span class="n">eml_path</span><span class="p">,</span> <span class="n">json_filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;upload_complete&#39;</span><span class="p">))</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>upload_file</code></strong>: Handles file uploads, saving the email file and initiating background processing to convert the file to JSON format.</li>
+</ul>
+<h4 id="upload_complete">
+  <code>/upload_complete</code>
+  <a class="heading-link" href="#upload_complete">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/upload_complete&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">upload_complete</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;upload_complete.html&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>upload_complete</code></strong>: Displays a confirmation page after a file is successfully uploaded and processed.</li>
+</ul>
+<h4 id="view_results">
+  <code>/view_results</code>
+  <a class="heading-link" href="#view_results">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/view_results&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">view_results</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">emails</span> <span class="o">=</span> <span class="n">fetch_emails</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Analyze email headers</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">email</span><span class="p">[</span><span class="s1">&#39;analysis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">analyze_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Render the results in a new template (results.html)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;results.html&#39;</span><span class="p">,</span> <span class="n">emails</span><span class="o">=</span><span class="n">emails</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>view_results</code></strong>: Fetches and analyzes email records, then renders the results on a results page, providing insights into email security.</li>
+</ul>
+<h4 id="email_jsonsfilename-jsonfilename-archivefilename">
+  <code>/email_jsons/&lt;filename&gt;</code>, <code>/json/&lt;filename&gt;</code>, <code>/archive/&lt;filename&gt;</code>
+  <a class="heading-link" href="#email_jsonsfilename-jsonfilename-archivefilename">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/email_jsons/&lt;filename&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;UPLOAD_FOLDER&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/json/&lt;filename&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">download_json</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;JSON_FOLDER&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/archive/&lt;filename&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">download_archive</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ARCHIVE_FOLDER&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Explanation</strong>:</p>
+<ul>
+<li><strong><code>download_file</code></strong>, <strong><code>download_json</code></strong>, <strong><code>download_archive</code></strong>: Provide endpoints for downloading files from the upload, JSON, and archive directories, respectively.</li>
+</ul>
+<h2 id="running-the-application">
+  Running the Application
+  <a class="heading-link" href="#running-the-application">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To run the application, execute the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python app.py
+</span></span></code></pre></div><p>Ensure that you have Flask installed and all necessary configuration files are in place. The application will be accessible at <code>http://localhost:5000</code>.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This application provides a comprehensive tool for analyzing email headers and managing email files. By integrating various APIs and performing thorough checks, it aims to enhance email security and provide valuable insights into potentially suspicious activities.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2021 -
+    
+    2024
+     JAM_SEC 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/jam_sec/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

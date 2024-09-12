@@ -6,8 +6,22 @@
     <description>Recent content on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2024 20:47:22 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2024 22:28:27 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Phishing Detector</title>
+      <link>http://localhost:1313/jam_sec/posts/phishing-detector/</link>
+      <pubDate>Wed, 11 Sep 2024 22:28:27 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/phishing-detector/</guid>
+      <description>Email Analysis Tool</description>
+    </item>
+    <item>
+      <title>Nmap Dashboard Creation v1</title>
+      <link>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</link>
+      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</guid>
+      <description>Creating the Nmap dashboard a different way</description>
+    </item>
     <item>
       <title>Nmap Dashboard Creation</title>
       <link>http://localhost:1313/jam_sec/posts/nmap-dashboard/</link>
