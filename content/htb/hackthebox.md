@@ -27,8 +27,8 @@ I have decided to start progressing on Hack The Box while I have some free time 
 #### SSH
 
 SSH Tunnelling to establish a connection with the remote ssh server and will listen for connections on the local port 1234 and forward to remote server on port 22. We can then access the services on the remote machine as if they were running locally. 
-```ssh -L 1234:localhost:22 user@{target_IP}
-```
+```ssh -L 1234:localhost:22 user@{target_IP}```
+
 #### SMB
 
 ```smbclient -L``` is used to list file shares.
