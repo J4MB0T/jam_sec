@@ -44,3 +44,40 @@ Run the ```select``` command to enter the database.
 #### Samba
 
 ```smbmap -H 10.10.10.3``` - Find shares
+
+#### FTP
+
+The below result from an Nmap scan shows the server allows anonymous logins:
+
+```ftp-anon: Anonymous FTP login allowed (FTP code 230)```
+
+#### Passwords
+
+We can use Hydra to iterate through usernames and use the same password for each user via SSH:
+
+```hydra -L users.txt -p 'PASSWORD' {target_IP} ssh```
+
+#### Network Sockets
+
+## Command: `ss -tlnp`
+
+The command `ss -tlnp` is used to display detailed information about network sockets on a Linux system. Here's a breakdown of what each option means:
+
+- **`ss`**: This is the command used to display network socket information (similar to `netstat`, but faster and more powerful).
+  
+- **`-t`**: Show **TCP** sockets only.
+  
+- **`-l`**: Show only **listening** sockets (i.e., sockets that are waiting for incoming connections, such as servers).
+
+- **`-n`**: Show numerical addresses and ports instead of resolving hostnames or service names. For example, it shows `127.0.0.1` instead of `localhost`, and `80` instead of `http`.
+
+- **`-p`**: Show the **process** using the socket, along with the PID (Process ID) and the name of the program.
+
+### In summary:
+The command `ss -tlnp` shows all **listening TCP sockets** on the system along with the **processes** that own those sockets, displaying addresses and ports in **numerical format**.
+
+### Example output:
+```bash
+State   Recv-Q  Send-Q  Local Address:Port   Peer Address:Port  Process
+LISTEN  0       128     127.0.0.1:5432       0.0.0.0:*          users:(("postgres",pid=12345,fd=7))
+LISTEN  0       128     0.0.0.0:22           0.0.0.0:*          users:(("sshd",pid=6789,fd=3))

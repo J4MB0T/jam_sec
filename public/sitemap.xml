@@ -53,6 +53,9 @@
     <loc>http://localhost:1313/jam_sec/htb/hackthebox/</loc>
     <lastmod>2024-08-25T13:38:26+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/jam_sec/posts/test_archtype/</loc>
+    <lastmod>2024-08-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/jam_sec/posts/pfsense/</loc>
     <lastmod>2024-08-20T13:28:55+00:00</lastmod>
   </url><url>
