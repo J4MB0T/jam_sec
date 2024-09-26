@@ -83,7 +83,9 @@ LISTEN  0       128     127.0.0.1:5432       0.0.0.0:*          users:(("postgre
 LISTEN  0       128     0.0.0.0:22           0.0.0.0:*          users:(("sshd",pid=6789,fd=3))
 
 
-#### Netcat 
+#### Netcat
+
+Netcat (or nc) is a versatile networking tool that is often referred to as the "Swiss Army knife" of networking. It is used for a variety of tasks involving network connections
 
 ```bash
 # 1. Basic Syntax
