@@ -64,8 +64,6 @@ We can use Hydra to iterate through usernames and use the same password for each
 
 #### Network Sockets
 
-## Command: `ss -tlnp`
-
 The command `ss -tlnp` is used to display detailed information about network sockets on a Linux system. Here's a breakdown of what each option means:
 
 - **`ss`**: This is the command used to display network socket information (similar to `netstat`, but faster and more powerful).
@@ -78,9 +76,6 @@ The command `ss -tlnp` is used to display detailed information about network soc
 
 - **`-p`**: Show the **process** using the socket, along with the PID (Process ID) and the name of the program.
 
-### In summary:
-The command `ss -tlnp` shows all **listening TCP sockets** on the system along with the **processes** that own those sockets, displaying addresses and ports in **numerical format**.
-
 ### Example output:
 ```bash
 State   Recv-Q  Send-Q  Local Address:Port   Peer Address:Port  Process
@@ -89,10 +84,6 @@ LISTEN  0       128     0.0.0.0:22           0.0.0.0:*          users:(("sshd",p
 
 
 #### Netcat 
-
-## `netcat` Command Summary
-
-`netcat` (or `nc`) is a versatile tool used for networking tasks such as TCP/UDP communication, port scanning, file transfer, and simple chats.
 
 ```bash
 # 1. Basic Syntax
