@@ -77,9 +77,10 @@ The command `ss -tlnp` is used to display detailed information about network soc
 - **`-p`**: Show the **process** using the socket, along with the PID (Process ID) and the name of the program.
 
 ### Example output:
+```bash
 State   Recv-Q  Send-Q  Local Address:Port   Peer Address:Port  Process
 LISTEN  0       128     127.0.0.1:5432       0.0.0.0:*          users:(("postgres",pid=12345,fd=7))
-LISTEN  0       128     0.0.0.0:22           0.0.0.0:*          users:(("sshd",pid=6789,fd=3))
+LISTEN  0       128     0.0.0.0:22           0.0.0.0:*          users:(("sshd",pid=6789,fd=3))```
 
 
 #### Netcat
