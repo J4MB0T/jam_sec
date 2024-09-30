@@ -128,25 +128,6 @@ nc -zv example.com 80
 nc -w 3 [hostname] 1234
 
 
-Here is the entire content in one text box for you to copy to a blog post:
-
-```markdown
-## Gobuster Usage Notes
-
-`gobuster` is a tool used for brute-forcing URIs (directories, files), DNS subdomains, virtual hosts, and more. Below are the common use cases and examples.
-
-### Installation
-
-```bash
-sudo apt install gobuster
-```
-
-or
-
-```bash
-go install github.com/OJ/gobuster/v3@latest
-```
-
 #### Gobuster - Directory/File Brute-Force (HTTP/HTTPS)
 
 ```bash
