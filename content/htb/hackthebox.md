@@ -126,7 +126,7 @@ nc -zv example.com 80
 
 10. Set a Timeout
 nc -w 3 [hostname] 1234
-
+```
 
 #### Gobuster - Directory/File Brute-Force (HTTP/HTTPS)
 
