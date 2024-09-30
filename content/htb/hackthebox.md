@@ -126,3 +126,66 @@ nc -zv example.com 80
 
 10. Set a Timeout
 nc -w 3 [hostname] 1234
+
+
+Here is the entire content in one text box for you to copy to a blog post:
+
+```markdown
+## Gobuster Usage Notes
+
+`gobuster` is a tool used for brute-forcing URIs (directories, files), DNS subdomains, virtual hosts, and more. Below are the common use cases and examples.
+
+### Installation
+
+```bash
+sudo apt install gobuster
+```
+
+or
+
+```bash
+go install github.com/OJ/gobuster/v3@latest
+```
+
+#### Gobuster - Directory/File Brute-Force (HTTP/HTTPS)
+
+```bash
+gobuster dir -u http://example.com -w /path/to/wordlist.txt
+```
+
+- `dir`: Directory/file brute-forcing mode
+- `-u`: Target URL
+- `-w`: Path to the wordlist
+
+#### DNS Subdomain Brute-Force
+
+```bash
+gobuster dns -d example.com -w /path/to/wordlist.txt
+```
+
+- `dns`: DNS subdomain brute-forcing mode
+- `-d`: Domain to target
+
+#### Virtual Host Brute-Force
+
+```bash
+gobuster vhost -u http://example.com -w /path/to/wordlist.txt
+```
+
+- `vhost`: Virtual host brute-forcing mode
+- `-u`: Target URL
+
+### Additional Flags
+
+- `-t`: Number of concurrent threads (default: 10)
+- `-o`: Output results to a file
+- `-x`: File extensions to check (e.g., `.php`, `.html`)
+- `-s`: HTTP response status codes to consider valid (e.g., `200,301`)
+
+### Example Command with Output
+
+```bash
+gobuster dir -u http://example.com -w /usr/share/wordlists/dirb/common.txt -t 50 -o results.txt
+```
+
+This will brute-force directories using 50 threads and save the results to `results.txt`.

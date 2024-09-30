@@ -16,13 +16,6 @@
       <description>Email Analysis Tool</description>
     </item>
     <item>
-      <title>Nmap Dashboard Creation v1</title>
-      <link>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</link>
-      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</guid>
-      <description>Creating the Nmap dashboard a different way</description>
-    </item>
-    <item>
       <title>Nmap Dashboard Creation</title>
       <link>http://localhost:1313/jam_sec/posts/nmap-dashboard/</link>
       <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
