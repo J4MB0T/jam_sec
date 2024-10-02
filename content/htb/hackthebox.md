@@ -179,4 +179,5 @@ Use the following when recieiving the following errror:
 ```ERROR 2026 (HY000): TLS/SSL error: SSL is required, but the server does not support it```
 
 ```bash 
-mysql -h IPADDRESS -u root --skip-ssl```
+mysql -h IPADDRESS -u root --skip-ssl
+```
