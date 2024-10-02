@@ -170,3 +170,12 @@ gobuster dir -u http://example.com -w /usr/share/wordlists/dirb/common.txt -t 50
 ```
 
 This will brute-force directories using 50 threads and save the results to `results.txt`.
+
+
+#### MySQL 
+
+Use the following when recieiving the following errror: 
+
+```ERROR 2026 (HY000): TLS/SSL error: SSL is required, but the server does not support it```
+
+```bash mysql -h 10.129.219.15 -u root --skip-ssl```
