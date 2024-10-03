@@ -174,6 +174,11 @@ This will brute-force directories using 50 threads and save the results to `resu
 
 #### MySQL 
 
+### Connecting to MySQL
+```bash
+mysql -u [username] -p
+
+
 Use the following when recieiving the following errror: 
 
 ```ERROR 2026 (HY000): TLS/SSL error: SSL is required, but the server does not support it```
@@ -181,3 +186,4 @@ Use the following when recieiving the following errror:
 ```bash 
 mysql -h IPADDRESS -u root --skip-ssl
 ```
+
