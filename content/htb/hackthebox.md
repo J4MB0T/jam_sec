@@ -177,6 +177,7 @@ This will brute-force directories using 50 threads and save the results to `resu
 ### Connecting to MySQL
 ```bash
 mysql -u [username] -p
+```
 
 
 Use the following when recieiving the following errror: 
