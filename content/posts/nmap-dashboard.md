@@ -9,7 +9,7 @@ tags:
 summary: "How I created an Nmap scanner to display results in a webpage"
 ---
 
-## Create the App
+## Creating the App
 ```
 from flask import Flask, render_template
 import pymysql
