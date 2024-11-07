@@ -75,5 +75,5 @@ slug = "projects"
 ### 🟣 **Hugo**  
 ☑️ &nbsp;*Status:* Blog setup - j4mb0t.uk
 
-### 🟣 **Github Pages Blog**  
+### 🟣 **Github Pages Blog**           
 ☑️ &nbsp;*Status:* Setup and live - jamsec.uk
