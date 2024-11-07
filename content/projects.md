@@ -70,7 +70,7 @@ slug = "projects"
 ☑️ &nbsp;*Status:* Scripts ready
 
 ### 🟣 **Home Assistant & Frigate**  
-☑️ &nbsp;*Status:* Automation set
+☑️ &nbsp;*Status:* Automation running
 
 ### 🟣 **Hugo**  
 ☑️ &nbsp;*Status:* Blog setup - j4mb0t.uk
