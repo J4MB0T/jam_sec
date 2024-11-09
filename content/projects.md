@@ -42,8 +42,8 @@ slug = "projects"
 ### 🔵 **Portainer Docker**  
 - 📈 &nbsp;**Grafana**: Setup  
 - 🚀 &nbsp;**Heimdall**: Running  
-- 🛠️ &nbsp;**Prometheus**: Configuring  
-- 🔍 &nbsp;**Node Exporter**: Monitoring
+- 🛠️ &nbsp;**Prometheus**: Running  
+- 🔍 &nbsp;**Node Exporter**: Running
 
 ### 🔵 **Wazuh SOC SIEM**  
 ☑️ &nbsp;*Status:* Active
