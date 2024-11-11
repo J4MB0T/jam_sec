@@ -49,7 +49,7 @@ slug = "projects"
 ☑️ &nbsp;*Status:* Active
 
 ### 🔵 **Nmap Network Scanner**  
-☑️ &nbsp;*Status:* Regular use
+☑️ &nbsp;*Status:* Daily Scans
 
 ### 🔵 **Nessus**  
 ☑️ &nbsp;*Status:* Configured
