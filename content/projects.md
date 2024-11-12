@@ -8,7 +8,7 @@ slug = "projects"
 ## 🔧 **Infrastructure Projects**
 
 ### 🟢 **pfSense Firewall**  
-☑️ &nbsp;*Status:* Ongoing
+☑️ &nbsp;*Status:* Running
 
 ### 🟢 **Synology NAS**  
 ☑️ &nbsp;*Purpose:* Backup of all Virtual Machines  
