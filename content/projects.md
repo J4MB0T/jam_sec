@@ -73,7 +73,7 @@ slug = "projects"
 ☑️ &nbsp;*Status:* Automation running
 
 ### 🟣 **Hugo**  
-☑️ &nbsp;*Status:* Blog setup - j4mb0t.uk
+☑️ &nbsp;*Status:* Site One - j4mb0t.uk
 
 ### 🟣 **Github Pages Blog**           
-☑️ &nbsp;*Status:* Setup and live - jamsec.uk
+☑️ &nbsp;*Status:* Site Two - jamsec.uk
