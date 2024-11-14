@@ -52,7 +52,7 @@ slug = "projects"
 ☑️ &nbsp;*Status:* Daily Scans
 
 ### 🔵 **Nessus**  
-☑️ &nbsp;*Status:* Configured
+☑️ &nbsp;*Status:* Daily Scans
 
 ### 🔴 **VEEAM**  
 ☑️ &nbsp;*Purpose:* Backup of all production Virtual Machines  
