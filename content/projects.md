@@ -23,7 +23,7 @@ slug = "projects"
 ☑️ &nbsp;*Status:* Completed
 
 ### 🟢 **Dell T420**  
-☑️ &nbsp;*Purpose:* Primary server for testing environment  
+☑️ &nbsp;*Purpose:* Primary server for controlled testing  
 ☑️ &nbsp;*Status:* In Progress
 
 ### 🟢 **TP Link L2 Managed Switch**  
