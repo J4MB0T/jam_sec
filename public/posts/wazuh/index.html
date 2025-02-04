@@ -10,7 +10,7 @@
 <meta name="color-scheme" content="light dark">
 
 
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self' http://localhost:1313 http://127.0.0.1:1313; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;">
 
 
 
@@ -195,8 +195,8 @@
 
       <div class="post-content">
         
-        <p>I decided to use Wazuh as a Network monitoring and alerting tool as it is open-source and easily configurable.</p>
-<p>Here I will outline additional steps I have performed to advance the basic usage of Wazuh.</p>
+        <p>I chose Wazuh as a Network monitoring and alerting tool as it is open-source and easily configurable.</p>
+<p>Here I will outline additional steps I have performed to enhance Wazuh&rsquo;s basic functionality.</p>
 <h1 id="integrating-wazuh-with-slack">
   Integrating Wazuh with Slack
   <a class="heading-link" href="#integrating-wazuh-with-slack">
@@ -215,7 +215,13 @@
 <ul>
 <li>In your Slack workspace, enable incoming webhooks and create one for your desired channel.</li>
 </ul>
-<p><img alt="Test" src="../../images/wazuh/wazuh_1.png"></p>
+<p><img alt="findhere" src="/wazuh_1.png">
+<img alt="Test" src="http://localhost:1313/index.jpg">
+<img alt="Test" src="http://localhost:1313/photo.jpg">
+<img alt="Test" src="./../../static/test.txt">
+<img alt="alt" src="/images/image.jpg">
+<img alt="alt" src="/image.jpg">
+<img alt="alt" src="./../../images/index.jpg"></p>
 <h2 id="2-configure-wazuh-integration">
   2. Configure Wazuh Integration
   <a class="heading-link" href="#2-configure-wazuh-integration">

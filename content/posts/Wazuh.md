@@ -12,9 +12,9 @@ tags:
 summary: "Wazuh"
 ---
 
-I decided to use Wazuh as a Network monitoring and alerting tool as it is open-source and easily configurable. 
+I chose Wazuh as a Network monitoring and alerting tool as it is open-source and easily configurable. 
 
-Here I will outline additional steps I have performed to advance the basic usage of Wazuh. 
+Here I will outline additional steps I have performed to enhance Wazuh's basic functionality.  
 
 
 # Integrating Wazuh with Slack
@@ -24,7 +24,13 @@ I have integrated Slack as a chosen notification method for Wazuh security alert
 ## 1. Create a Slack Incoming Webhook
 - In your Slack workspace, enable incoming webhooks and create one for your desired channel.
 
-![Test](../../images/wazuh/wazuh_1.png)
+![findhere](/wazuh_1.png)
+![Test](http://localhost:1313/index.jpg)
+![Test](http://localhost:1313/photo.jpg)
+![Test](./../../static/test.txt)
+![alt](/images/image.jpg)
+![alt](/image.jpg)
+![alt](./../../images/index.jpg)
 
 
 
