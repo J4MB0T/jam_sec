@@ -44,7 +44,7 @@ theme = "hugo-coder"
   fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
   formaction = ["'self'"]
   framesrc = ["'self'"]
-  imgsrc = ["'self'"]
+  imgsrc = ["'self'", "http://localhost:1313", "http://127.0.0.1:1313"]
   objectsrc = ["'none'"]
   stylesrc = [
     "'self'",
