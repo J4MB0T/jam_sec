@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/jam_sec/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=jam_sec/livereload" data-no-instant defer></script>
+  <title>
+  Wazuh · JAM_SEC
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="JAM_SEC">
+<meta name="description" content="Wazuh Security Integrations">
+<meta name="keywords" content="blog,developer,personal,cyber,security">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wazuh">
+  <meta name="twitter:description" content="Wazuh Security Integrations">
+
+<meta property="og:url" content="http://localhost:1313/jam_sec/posts/wazuh/">
+  <meta property="og:site_name" content="JAM_SEC">
+  <meta property="og:title" content="Wazuh">
+  <meta property="og:description" content="Wazuh Security Integrations">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-04T21:19:10+13:00">
+    <meta property="article:modified_time" content="2025-02-04T21:19:10+13:00">
+    <meta property="article:tag" content="Homelab">
+    <meta property="article:tag" content="Network">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/jam_sec/posts/wazuh/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/jam_sec/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/jam_sec/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/jam_sec/">
+      JAM_SEC
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/htb/">Hack The Box</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/jam_sec/posts/wazuh/">
+              Wazuh
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-02-04T21:19:10&#43;13:00">
+                February 4, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/jam_sec/categories/homelab/">Homelab</a>
+      <span class="separator">•</span>
+    <a href="/jam_sec/categories/network-security/">Network Security</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/jam_sec/tags/homelab/">Homelab</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/network/">Network</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># Integrating Wazuh with Slack
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">I have integrated Slack as a chosen notification method for Wazuh security alerts. Here is a brief breakdown on how this is achieved. (https://documentation.wazuh.com/current/user-manual/manager/integration-with-external-apis.html)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## 1. Create a Slack Incoming Webhook
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> In your Slack workspace, enable incoming webhooks and create one for your desired channel.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">![<span class="nt">Wazuh Configuration</span>](<span class="na">./static/wazuh/wazuh_1.png</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## 2. Configure Wazuh Integration
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> On the Wazuh manager, edit the configuration file:
+</span></span><span class="line"><span class="cl">  ```bash
+</span></span><span class="line"><span class="cl">  sudo nano /var/ossec/etc/ossec.conf
+</span></span></code></pre></div><ul>
+<li>Add the following integration configuration, replacing <code>&lt;SLACK_WEBHOOK_URL&gt;</code> with your actual Slack webhook URL:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;ossec_config&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;integration&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;name&gt;</span>slack<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;hook_url&gt;&lt;SLACK_WEBHOOK_URL&gt;&lt;/hook_url&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;alert_format&gt;</span>json<span class="nt">&lt;/alert_format&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;level&gt;</span>5<span class="nt">&lt;/level&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/integration&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/ossec_config&gt;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="3-restart-wazuh-manager">
+  3. Restart Wazuh Manager
+  <a class="heading-link" href="#3-restart-wazuh-manager">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Apply the changes by restarting the Wazuh manager:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart wazuh-manager
+</span></span></code></pre></div><p>After completing these steps, Wazuh will send alerts directly to your specified Slack channel.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2021 -
+    
+    2025
+     JAM_SEC 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/jam_sec/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

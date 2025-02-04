@@ -6,8 +6,22 @@
     <description>Recent content in Tags on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Sep 2024 22:28:27 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2025 21:19:10 +1300</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/jam_sec/tags/homelab/</link>
+      <pubDate>Tue, 04 Feb 2025 21:19:10 +1300</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>http://localhost:1313/jam_sec/tags/network/</link>
+      <pubDate>Tue, 04 Feb 2025 21:19:10 +1300</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/network/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Email</title>
       <link>http://localhost:1313/jam_sec/tags/email/</link>
