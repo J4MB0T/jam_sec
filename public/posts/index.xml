@@ -13,7 +13,7 @@
       <link>http://localhost:1313/jam_sec/posts/wazuh/</link>
       <pubDate>Tue, 04 Feb 2025 21:19:10 +1300</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/wazuh/</guid>
-      <description>Wazuh Security Integrations</description>
+      <description>Wazuh</description>
     </item>
     <item>
       <title>Phishing Detector</title>
@@ -21,6 +21,13 @@
       <pubDate>Wed, 11 Sep 2024 22:28:27 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/phishing-detector/</guid>
       <description>Email Analysis Tool</description>
+    </item>
+    <item>
+      <title>Nmap Dashboard Creation v1</title>
+      <link>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</link>
+      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</guid>
+      <description>Creating the Nmap dashboard a different way</description>
     </item>
     <item>
       <title>Nmap Dashboard Creation</title>

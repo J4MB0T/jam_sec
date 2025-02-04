@@ -17,7 +17,6 @@ I decided to use Wazuh as a Network monitoring and alerting tool as it is open-s
 Here I will outline additional steps I have performed to advance the basic usage of Wazuh. 
 
 
-```markdown
 # Integrating Wazuh with Slack
 
 I have integrated Slack as a chosen notification method for Wazuh security alerts. Here is a brief breakdown on how this is achieved. (https://documentation.wazuh.com/current/user-manual/manager/integration-with-external-apis.html)

@@ -197,22 +197,36 @@
         
         <p>I decided to use Wazuh as a Network monitoring and alerting tool as it is open-source and easily configurable.</p>
 <p>Here I will outline additional steps I have performed to advance the basic usage of Wazuh.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># Integrating Wazuh with Slack
-</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
-</span></span><span class="line"><span class="cl">I have integrated Slack as a chosen notification method for Wazuh security alerts. Here is a brief breakdown on how this is achieved. (https://documentation.wazuh.com/current/user-manual/manager/integration-with-external-apis.html)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gu">## 1. Create a Slack Incoming Webhook
-</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> In your Slack workspace, enable incoming webhooks and create one for your desired channel.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">![<span class="nt">Test</span>](<span class="na">../../images/wazuh/wazuh_1.png</span>)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gu">## 2. Configure Wazuh Integration
-</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> On the Wazuh manager, edit the configuration file:
-</span></span><span class="line"><span class="cl">  ```bash
-</span></span><span class="line"><span class="cl">  sudo nano /var/ossec/etc/ossec.conf
-</span></span></code></pre></div><ul>
+<h1 id="integrating-wazuh-with-slack">
+  Integrating Wazuh with Slack
+  <a class="heading-link" href="#integrating-wazuh-with-slack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>I have integrated Slack as a chosen notification method for Wazuh security alerts. Here is a brief breakdown on how this is achieved. (<a href="https://documentation.wazuh.com/current/user-manual/manager/integration-with-external-apis.html"  class="external-link" target="_blank" rel="noopener">https://documentation.wazuh.com/current/user-manual/manager/integration-with-external-apis.html</a>)</p>
+<h2 id="1-create-a-slack-incoming-webhook">
+  1. Create a Slack Incoming Webhook
+  <a class="heading-link" href="#1-create-a-slack-incoming-webhook">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>In your Slack workspace, enable incoming webhooks and create one for your desired channel.</li>
+</ul>
+<p><img alt="Test" src="../../images/wazuh/wazuh_1.png"></p>
+<h2 id="2-configure-wazuh-integration">
+  2. Configure Wazuh Integration
+  <a class="heading-link" href="#2-configure-wazuh-integration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>On the Wazuh manager, edit the configuration file:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /var/ossec/etc/ossec.conf
+</span></span></code></pre></div></li>
 <li>Add the following integration configuration, replacing <code>&lt;SLACK_WEBHOOK_URL&gt;</code> with your actual Slack webhook URL:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;ossec_config&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&lt;integration&gt;</span>
