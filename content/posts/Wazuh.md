@@ -20,11 +20,8 @@ I have integrated Slack as a chosen notification method for Wazuh security alert
 ## 1. Create a Slack Incoming Webhook
 - In your Slack workspace, enable incoming webhooks and create one for your desired channel.
 
-![Wazuh Configuration](/static/wazuh/wazuh_1.png)
-![Wazuh Configuration](/static/wazuh/wazuh_2.png)
-![Wazuh Configuration](/static/wazuh/wazuh_3.png)
+![Test](../../images/wazuh/wazuh_1.png)
 
-{{< figure src="/static/wazuh/wazuh_1.png" width="200" alt="wazuh_1" class="center" >}}
 
 
 ## 2. Configure Wazuh Integration
