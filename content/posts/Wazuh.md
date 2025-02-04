@@ -24,7 +24,7 @@ I have integrated Slack as a chosen notification method for Wazuh security alert
 ![Wazuh Configuration](/static/wazuh/wazuh_2.png)
 ![Wazuh Configuration](/static/wazuh/wazuh_3.png)
 
-{{< figure src="/static/wazuh/wazuh_1.png" width="200" alt="wazuh_1" class="middle" >}}
+{{< figure src="/static/wazuh/wazuh_1.png" width="200" alt="wazuh_1" class="center" >}}
 
 
 ## 2. Configure Wazuh Integration
