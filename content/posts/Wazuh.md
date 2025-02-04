@@ -24,6 +24,9 @@ I have integrated Slack as a chosen notification method for Wazuh security alert
 ![Wazuh Configuration](/static/wazuh/wazuh_2.png)
 ![Wazuh Configuration](/static/wazuh/wazuh_3.png)
 
+{{< figure src="/static/wazuh/wazuh_1.png" width="200" alt="wazuh_1" class="middle" >}}
+
+
 ## 2. Configure Wazuh Integration
 - On the Wazuh manager, edit the configuration file:
   ```bash
