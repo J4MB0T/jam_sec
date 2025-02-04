@@ -9,8 +9,13 @@ categories:
 tags: 
   - "Homelab"
   - "Network"
-summary: "Wazuh Security Integrations"
+summary: "Wazuh"
 ---
+
+I decided to use Wazuh as a Network monitoring and alerting tool as it is open-source and easily configurable. 
+
+Here I will outline additional steps I have performed to advance the basic usage of Wazuh. 
+
 
 ```markdown
 # Integrating Wazuh with Slack
