@@ -1,7 +1,7 @@
 ---
 title: "🚀 Using Terraform with vSphere: A Step-by-Step Guide"
 date: 2025-02-18T18:19:49+13:00
-draft: true
+draft: false
 author: "James"
 tags: ["Terraform", "vSphere", "Infrastructure as Code", "VM"]
 summary: "Terraform Provisioning"
