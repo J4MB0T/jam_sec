@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSphere on JAM_SEC</title>
+    <link>http://localhost:1313/jam_sec/tags/vsphere/</link>
+    <description>Recent content in VSphere on JAM_SEC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Feb 2025 18:19:49 +1300</lastBuildDate>
+    <atom:link href="http://localhost:1313/jam_sec/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🚀 Using Terraform with vSphere: A Step-by-Step Guide</title>
+      <link>http://localhost:1313/jam_sec/posts/terraform/</link>
+      <pubDate>Tue, 18 Feb 2025 18:19:49 +1300</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/terraform/</guid>
+      <description>Terraform Provisioning</description>
+    </item>
+  </channel>
+</rss>

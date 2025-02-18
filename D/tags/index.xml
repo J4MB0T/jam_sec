@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on JAM_SEC</title>
+    <link>http://localhost:1313/jam_sec/tags/</link>
+    <description>Recent content in Tags on JAM_SEC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Feb 2025 21:19:10 +1300</lastBuildDate>
+    <atom:link href="http://localhost:1313/jam_sec/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/jam_sec/tags/homelab/</link>
+      <pubDate>Tue, 04 Feb 2025 21:19:10 +1300</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/homelab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>http://localhost:1313/jam_sec/tags/network/</link>
+      <pubDate>Tue, 04 Feb 2025 21:19:10 +1300</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/network/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Email</title>
+      <link>http://localhost:1313/jam_sec/tags/email/</link>
+      <pubDate>Wed, 11 Sep 2024 22:28:27 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/email/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Phishing</title>
+      <link>http://localhost:1313/jam_sec/tags/phishing/</link>
+      <pubDate>Wed, 11 Sep 2024 22:28:27 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/phishing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network Scanner</title>
+      <link>http://localhost:1313/jam_sec/tags/network-scanner/</link>
+      <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/network-scanner/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nmap</title>
+      <link>http://localhost:1313/jam_sec/tags/nmap/</link>
+      <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/nmap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/jam_sec/tags/linux/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metasplitable</title>
+      <link>http://localhost:1313/jam_sec/tags/metasplitable/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/metasplitable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Penetration-Testing</title>
+      <link>http://localhost:1313/jam_sec/tags/penetration-testing/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/penetration-testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/jam_sec/tags/security/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
