@@ -21,6 +21,11 @@ Before you dive in, make sure you have the following:
 - 🧑‍💻 The necessary **permissions** to create and manage VMs.
 - 🖼️ An existing **VM template** or **clone** for deployment (I have prebuilt a golden image).
 
+(https://github.com/vmware-samples/packer-examples-for-vsphere/tree/develop/terraform/vsphere-role) Is a good place to start, this repo has the get starting templates to build templates with Packer. I have linked the folder which adds the correct roles to the user in vSphere as its quite lengthy doing it manually. 
+
+I had used this as a guide to give my Terraform vSphere user the least privilege roles. 
+
+
 
 ## 🛠️ Step 1: Build the Terraform Image from a Clone
 
