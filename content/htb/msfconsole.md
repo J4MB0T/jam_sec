@@ -1,7 +1,7 @@
 ---
 title: "Msfconsole"
 date: 2024-08-25T19:12:12Z
-draft: false
+draft: true
 author: "James"
 tags: 
   - "Security"

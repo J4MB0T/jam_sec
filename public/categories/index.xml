@@ -6,8 +6,15 @@
     <description>Recent content in Categories on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Feb 2025 21:19:10 +1300</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity</title>
+      <link>http://localhost:1313/jam_sec/categories/cybersecurity/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/categories/cybersecurity/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Homelab</title>
       <link>http://localhost:1313/jam_sec/categories/homelab/</link>

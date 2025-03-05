@@ -6,8 +6,22 @@
     <description>Recent content in Posts on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Feb 2025 18:19:49 +1300</lastBuildDate>
+    <lastBuildDate>Thu, 06 Mar 2025 00:53:40 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vSphere Snapshots</title>
+      <link>http://localhost:1313/jam_sec/posts/vsphere-snapshots/</link>
+      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/vsphere-snapshots/</guid>
+      <description>A step-by-step guide to automating vSphere snapshots using Terraform.</description>
+    </item>
+    <item>
+      <title>Creating a SOC SIEM</title>
+      <link>http://localhost:1313/jam_sec/posts/creating-a-soc-siem/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/creating-a-soc-siem/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;&#xA;  Introduction&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;strong&gt;Security Operations Center (SOC)&lt;/strong&gt; is essential for monitoring, detecting, and responding to cybersecurity threats. At the core of any SOC is a &lt;strong&gt;Security Information and Event Management (SIEM)&lt;/strong&gt; system, which collects, analyzes, and correlates security data from multiple sources.&lt;/p&gt;&#xA;&lt;p&gt;In this post, I&amp;rsquo;ll walk you through my journey of creating a &lt;strong&gt;SOC SIEM&lt;/strong&gt; using various open-source tools, including &lt;strong&gt;Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>🚀 Using Terraform with vSphere: A Step-by-Step Guide</title>
       <link>http://localhost:1313/jam_sec/posts/terraform/</link>
@@ -28,13 +42,6 @@
       <pubDate>Wed, 11 Sep 2024 22:28:27 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/phishing-detector/</guid>
       <description>Email Analysis Tool</description>
-    </item>
-    <item>
-      <title>Nmap Dashboard Creation v1</title>
-      <link>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</link>
-      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/posts/nmap-dashboardv1/</guid>
-      <description>Creating the Nmap dashboard a different way</description>
     </item>
     <item>
       <title>Nmap Dashboard Creation</title>

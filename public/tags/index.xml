@@ -6,8 +6,85 @@
     <description>Recent content in Tags on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Feb 2025 18:19:49 +1300</lastBuildDate>
+    <lastBuildDate>Thu, 06 Mar 2025 00:53:40 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/jam_sec/tags/automation/</link>
+      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Snapshots</title>
+      <link>http://localhost:1313/jam_sec/tags/snapshots/</link>
+      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/snapshots/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>http://localhost:1313/jam_sec/tags/terraform/</link>
+      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vsphere</title>
+      <link>http://localhost:1313/jam_sec/tags/vsphere/</link>
+      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ArcherySec</title>
+      <link>http://localhost:1313/jam_sec/tags/archerysec/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/archerysec/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grafana</title>
+      <link>http://localhost:1313/jam_sec/tags/grafana/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/grafana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graylog</title>
+      <link>http://localhost:1313/jam_sec/tags/graylog/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/graylog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/jam_sec/tags/security/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SIEM</title>
+      <link>http://localhost:1313/jam_sec/tags/siem/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/siem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SOC</title>
+      <link>http://localhost:1313/jam_sec/tags/soc/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/soc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wazuh</title>
+      <link>http://localhost:1313/jam_sec/tags/wazuh/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/wazuh/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Infrastructure as Code</title>
       <link>http://localhost:1313/jam_sec/tags/infrastructure-as-code/</link>
@@ -16,24 +93,10 @@
       <description></description>
     </item>
     <item>
-      <title>Terraform</title>
-      <link>http://localhost:1313/jam_sec/tags/terraform/</link>
-      <pubDate>Tue, 18 Feb 2025 18:19:49 +1300</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/terraform/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>VM</title>
       <link>http://localhost:1313/jam_sec/tags/vm/</link>
       <pubDate>Tue, 18 Feb 2025 18:19:49 +1300</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/vm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VSphere</title>
-      <link>http://localhost:1313/jam_sec/tags/vsphere/</link>
-      <pubDate>Tue, 18 Feb 2025 18:19:49 +1300</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/vsphere/</guid>
       <description></description>
     </item>
     <item>
@@ -67,43 +130,15 @@
     <item>
       <title>Network Scanner</title>
       <link>http://localhost:1313/jam_sec/tags/network-scanner/</link>
-      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/network-scanner/</guid>
       <description></description>
     </item>
     <item>
       <title>Nmap</title>
       <link>http://localhost:1313/jam_sec/tags/nmap/</link>
-      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/nmap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>http://localhost:1313/jam_sec/tags/linux/</link>
-      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Metasplitable</title>
-      <link>http://localhost:1313/jam_sec/tags/metasplitable/</link>
-      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/metasplitable/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Penetration-Testing</title>
-      <link>http://localhost:1313/jam_sec/tags/penetration-testing/</link>
-      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/penetration-testing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>http://localhost:1313/jam_sec/tags/security/</link>
-      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
       <description></description>
     </item>
   </channel>

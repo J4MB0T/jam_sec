@@ -1,7 +1,7 @@
 ---
 title: "Useful Notes"
 date: 2024-08-25T13:38:26Z
-draft: false
+draft: true
 author: "James"
 tags: 
   - "Security"

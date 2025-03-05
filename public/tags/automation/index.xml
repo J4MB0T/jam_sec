@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on JAM_SEC</title>
+    <link>http://localhost:1313/jam_sec/tags/automation/</link>
+    <description>Recent content in Automation on JAM_SEC</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Mar 2025 00:53:40 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/jam_sec/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vSphere Snapshots</title>
+      <link>http://localhost:1313/jam_sec/posts/vsphere-snapshots/</link>
+      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/vsphere-snapshots/</guid>
+      <description>A step-by-step guide to automating vSphere snapshots using Terraform.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/jam_sec/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=jam_sec/livereload" data-no-instant defer></script>
+  <title>
+  Creating a SOC SIEM · JAM_SEC
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self' http://localhost:1313 http://127.0.0.1:1313; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="JAM_SEC">
+<meta name="description" content="
+  Introduction
+  
+    
+    Link to heading
+  
+
+A Security Operations Center (SOC) is essential for monitoring, detecting, and responding to cybersecurity threats. At the core of any SOC is a Security Information and Event Management (SIEM) system, which collects, analyzes, and correlates security data from multiple sources.
+In this post, I&rsquo;ll walk you through my journey of creating a SOC SIEM using various open-source tools, including Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec.">
+<meta name="keywords" content="blog,developer,personal,cyber,security">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creating a SOC SIEM">
+  <meta name="twitter:description" content="Introduction Link to heading A Security Operations Center (SOC) is essential for monitoring, detecting, and responding to cybersecurity threats. At the core of any SOC is a Security Information and Event Management (SIEM) system, which collects, analyzes, and correlates security data from multiple sources.
+In this post, I’ll walk you through my journey of creating a SOC SIEM using various open-source tools, including Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec.">
+
+<meta property="og:url" content="http://localhost:1313/jam_sec/posts/creating-a-soc-siem/">
+  <meta property="og:site_name" content="JAM_SEC">
+  <meta property="og:title" content="Creating a SOC SIEM">
+  <meta property="og:description" content="Introduction Link to heading A Security Operations Center (SOC) is essential for monitoring, detecting, and responding to cybersecurity threats. At the core of any SOC is a Security Information and Event Management (SIEM) system, which collects, analyzes, and correlates security data from multiple sources.
+In this post, I’ll walk you through my journey of creating a SOC SIEM using various open-source tools, including Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-27T00:00:00+00:00">
+    <meta property="article:tag" content="SIEM">
+    <meta property="article:tag" content="SOC">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Wazuh">
+    <meta property="article:tag" content="Graylog">
+    <meta property="article:tag" content="Grafana">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/jam_sec/posts/creating-a-soc-siem/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/jam_sec/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/jam_sec/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/jam_sec/">
+      JAM_SEC
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/jam_sec/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/jam_sec/posts/creating-a-soc-siem/">
+              Creating a SOC SIEM
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-02-27T00:00:00Z">
+                February 27, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/jam_sec/categories/cybersecurity/">Cybersecurity</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/jam_sec/tags/siem/">SIEM</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/soc/">SOC</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/security/">Security</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/wazuh/">Wazuh</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/graylog/">Graylog</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/grafana/">Grafana</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/jam_sec/tags/archerysec/">ArcherySec</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>A <strong>Security Operations Center (SOC)</strong> is essential for monitoring, detecting, and responding to cybersecurity threats. At the core of any SOC is a <strong>Security Information and Event Management (SIEM)</strong> system, which collects, analyzes, and correlates security data from multiple sources.</p>
+<p>In this post, I&rsquo;ll walk you through my journey of creating a <strong>SOC SIEM</strong> using various open-source tools, including <strong>Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec</strong>.</p>
+<hr>
+<h2 id="setting-up-wazuh-manager-411-in-docker">
+  Setting Up Wazuh Manager 4.11 in Docker
+  <a class="heading-link" href="#setting-up-wazuh-manager-411-in-docker">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="why-wazuh">
+  Why Wazuh?
+  <a class="heading-link" href="#why-wazuh">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Wazuh is an open-source security platform offering <strong>threat detection, log analysis, compliance monitoring, and file integrity monitoring (FIM)</strong>. It&rsquo;s a lightweight yet powerful SIEM solution.</p>
+<h3 id="installation-steps">
+  Installation Steps:
+  <a class="heading-link" href="#installation-steps">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p><strong>Install Docker &amp; Docker Compose</strong> (if not already installed).</p>
+</li>
+<li>
+<p>Clone the Wazuh Docker repository and deploy the stack:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/wazuh/wazuh-docker.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> wazuh-docker
+</span></span><span class="line"><span class="cl">docker-compose up -d
+</span></span></code></pre></div></li>
+<li>
+<p>Verify that the Wazuh Manager is running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker ps <span class="p">|</span> grep wazuh
+</span></span></code></pre></div></li>
+<li>
+<p>Access the Wazuh Dashboard and start configuring agents.</p>
+</li>
+</ol>
+<hr>
+<h2 id="configuring-graylog-6-for-pfsense-syslog-collection">
+  Configuring Graylog 6 for pFSense Syslog Collection
+  <a class="heading-link" href="#configuring-graylog-6-for-pfsense-syslog-collection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="why-graylog">
+  Why Graylog?
+  <a class="heading-link" href="#why-graylog">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Graylog is a <strong>centralized log management system</strong> with powerful search and alerting capabilities. It’s perfect for ingesting firewall logs from <strong>pFSense</strong>.</p>
+<h3 id="steps-to-configure">
+  Steps to Configure:
+  <a class="heading-link" href="#steps-to-configure">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p>Install Graylog 6 via Docker:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --name graylog -p 9000:9000 -p 1514:1514/udp -p 12201:12201/udp graylog/graylog
+</span></span></code></pre></div></li>
+<li>
+<p>Configure <strong>pFSense</strong> to send logs:</p>
+<ul>
+<li>Navigate to <strong>Status → System Logs → Settings</strong>.</li>
+<li>Enable <strong>Remote Logging</strong>.</li>
+<li>Set <strong>Graylog’s IP</strong> as the syslog target.</li>
+</ul>
+</li>
+<li>
+<p>Create a new <strong>Syslog UDP Input</strong> in Graylog.</p>
+</li>
+<li>
+<p>Validate incoming logs using <strong>Graylog’s search feature</strong>.</p>
+</li>
+</ol>
+<hr>
+<h2 id="integrating-grafana-for-visualization">
+  Integrating Grafana for Visualization
+  <a class="heading-link" href="#integrating-grafana-for-visualization">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="why-grafana">
+  Why Grafana?
+  <a class="heading-link" href="#why-grafana">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Grafana provides <strong>powerful dashboards</strong> for monitoring and visualizing logs, security events, and system metrics.</p>
+<h3 id="steps">
+  Steps:
+  <a class="heading-link" href="#steps">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p>Install Grafana:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --name<span class="o">=</span>grafana -p 3000:3000 grafana/grafana
+</span></span></code></pre></div></li>
+<li>
+<p>Add <strong>Graylog and Wazuh</strong> as data sources.</p>
+</li>
+<li>
+<p>Create <strong>custom dashboards</strong> for security events.</p>
+</li>
+</ol>
+<hr>
+<h2 id="monitoring-system-metrics-with-node-exporter">
+  Monitoring System Metrics with Node Exporter
+  <a class="heading-link" href="#monitoring-system-metrics-with-node-exporter">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To ensure the SOC infrastructure is running smoothly, I installed <strong>Node Exporter</strong> on my Debian 12 machines and vCenter.</p>
+<h3 id="steps-1">
+  Steps:
+  <a class="heading-link" href="#steps-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p>Install Node Exporter:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install prometheus-node-exporter -y
+</span></span></code></pre></div></li>
+<li>
+<p>Add it as a <strong>Prometheus data source</strong> in Grafana.</p>
+</li>
+<li>
+<p>Visualize CPU, memory, and network usage in real time.</p>
+</li>
+</ol>
+<hr>
+<h2 id="implementing-archerysec-for-vulnerability-management">
+  Implementing ArcherySec for Vulnerability Management
+  <a class="heading-link" href="#implementing-archerysec-for-vulnerability-management">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="why-archerysec">
+  Why ArcherySec?
+  <a class="heading-link" href="#why-archerysec">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>ArcherySec is an <strong>open-source vulnerability management tool</strong> that helps track security weaknesses.</p>
+<h3 id="steps-2">
+  Steps:
+  <a class="heading-link" href="#steps-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p>Install ArcherySec:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d -p 8000:8000 archerysec/archerysec
+</span></span></code></pre></div></li>
+<li>
+<p>Run vulnerability scans and integrate them into the SIEM workflow.</p>
+</li>
+</ol>
+<hr>
+<h2 id="enhancing-detection--response-capabilities">
+  Enhancing Detection &amp; Response Capabilities
+  <a class="heading-link" href="#enhancing-detection--response-capabilities">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To improve <strong>threat detection and response</strong>, I:</p>
+<ul>
+<li>Configured <strong>alerts</strong> in <strong>Wazuh and Graylog</strong>.</li>
+<li>Automated responses for high-priority threats.</li>
+<li>Fine-tuned <strong>correlation rules</strong> to reduce false positives.</li>
+</ul>
+<hr>
+<h2 id="future-enhancements--next-steps">
+  Future Enhancements &amp; Next Steps
+  <a class="heading-link" href="#future-enhancements--next-steps">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To further improve my <strong>SOC SIEM</strong>, I plan to:</p>
+<ul>
+<li>Integrate <strong>Suricata IDS/IPS</strong> for deep packet inspection.</li>
+<li>Add <strong>SOAR (Security Orchestration, Automation, and Response)</strong> for automated incident handling.</li>
+<li>Optimize <strong>log retention and storage</strong>.</li>
+</ul>
+<hr>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Building a <strong>SOC SIEM</strong> from scratch is challenging but rewarding. By integrating <strong>Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec</strong>, I’ve created a robust security monitoring system.</p>
+<p>💡 <strong>What’s next?</strong> I’d love to hear how you’re building your SIEM! Drop a comment below and share your thoughts.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2021 -
+    
+    2025
+     JAM_SEC 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/jam_sec/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
