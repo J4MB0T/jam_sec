@@ -1,7 +1,7 @@
 ---
 title: "Creating a Soc Siem"
 date: 2025-02-27T23:54:08+07:00
-draft: true
+draft: True
 title: "Creating a SOC SIEM"
 date: 2025-02-27
 tags: ["SIEM", "SOC", "Security", "Wazuh", "Graylog", "Grafana", "ArcherySec"]
