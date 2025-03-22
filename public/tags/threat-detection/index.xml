@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Splunk on JAM_SEC</title>
-    <link>http://localhost:1313/jam_sec/tags/splunk/</link>
-    <description>Recent content in Splunk on JAM_SEC</description>
+    <title>Threat Detection on JAM_SEC</title>
+    <link>http://localhost:1313/jam_sec/tags/threat-detection/</link>
+    <description>Recent content in Threat Detection on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 22 Mar 2025 23:12:42 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/jam_sec/tags/splunk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/jam_sec/tags/threat-detection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automating DNS Threat Detection with Splunk</title>
       <link>http://localhost:1313/jam_sec/posts/automating-dns-threat-detection/</link>
       <pubDate>Sat, 22 Mar 2025 23:12:42 +0800</pubDate>
       <guid>http://localhost:1313/jam_sec/posts/automating-dns-threat-detection/</guid>
       <description>Learn how to set up a Splunk query and alert to monitor questionable DNS queries, filter out reputable domains, and send automated reports via Slack</description>
-    </item>
-    <item>
-      <title>Splunk SSH Alert</title>
-      <link>http://localhost:1313/jam_sec/posts/splunk-ssh-alert/</link>
-      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
-      <guid>http://localhost:1313/jam_sec/posts/splunk-ssh-alert/</guid>
-      <description>Learn how to configure Splunk to detect successful SSH logins and send formatted alerts to Slack.</description>
     </item>
   </channel>
 </rss>

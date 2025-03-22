@@ -170,7 +170,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              3-minute read
+              2-minute read
             </span>
           </div>
           
@@ -222,14 +222,14 @@
 
       <div class="post-content">
         
-        <h2 id="-introduction">
-  🚀 Introduction
-  <a class="heading-link" href="#-introduction">
+        <h1 id="-splunk-ssh-login-alert">
+  🚀 Splunk SSH Login Alert
+  <a class="heading-link" href="#-splunk-ssh-login-alert">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<p>Monitoring SSH login activity is crucial for security. This guide walks you through setting up a <strong>Splunk alert</strong> that detects <strong>successful SSH logins</strong> and sends <strong>formatted Slack notifications</strong> with useful details like user, source IP, destination host, authentication method, and timestamp.</p>
+</h1>
+<p>Monitoring SSH login activity is crucial for security. This guide walks you through setting up a <strong>Splunk alert</strong> that detects <strong>successful SSH logins</strong> and sends <strong>formatted Slack notifications</strong> with essential details.</p>
 <hr>
 <h2 id="-splunk-query-to-detect-successful-ssh-logins">
   🎯 Splunk Query to Detect Successful SSH Logins
@@ -238,102 +238,106 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>We use a <strong>Splunk search query</strong> to detect successful SSH logins from <code>/var/log/auth.log</code>.</p>
+<p>Use the following <strong>Splunk search query</strong> to detect successful SSH logins from <code>/var/log/auth.log</code>.</p>
 <pre tabindex="0"><code class="language-spl" data-lang="spl">index=* &#34;Accepted password for&#34; OR &#34;Accepted publickey for&#34; source=&#34;/var/log/auth.log&#34; 
 | rex field=_raw &#34;Accepted (?&lt;auth_method&gt;\w+) for (?&lt;user&gt;\w+) from (?&lt;ip&gt;[\d\.]+) port (?&lt;port&gt;\d+)&#34;   
 | eval formatted_time=strftime(_time, &#34;%Y-%m-%d %H:%M:%S&#34;) 
 | table formatted_time host user ip auth_method port  
 | eval slack_message=&#34;🚀 *Successful SSH Login Alert*\n👤 *User:* `&#34;.user.&#34;`\n🖥️ *DEST Host:* `&#34;.host.&#34;`\n🌐 *SRC IP:* `&#34;.ip.&#34;`\n🔑 *Method:* `&#34;.auth_method.&#34;`\n⏰ *Time:* `&#34;.formatted_time.&#34;`&#34;
+</code></pre><h3 id="-explanation">
+  📝 Explanation:
+  <a class="heading-link" href="#-explanation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>Filters logs</strong> to find SSH logins (<strong>password/public key authentication</strong>).</li>
+<li><strong>Extracts key details</strong> using <code>rex</code> (<strong>regex extraction</strong>):
+<ul>
+<li>👤 <code>user</code>: <strong>Username</strong></li>
+<li>🌐 <code>ip</code>: <strong>Source IP</strong></li>
+<li>🔑 <code>auth_method</code>: <strong>Authentication method</strong></li>
+<li>🖥️ <code>host</code>: <strong>Destination machine</strong></li>
+</ul>
+</li>
+<li><strong>Formats the timestamp</strong> into <code>YYYY-MM-DD HH:MM:SS</code> using <code>strftime()</code>.</li>
+<li><strong>Constructs the Slack message</strong> with <strong>emojis for better readability</strong>.</li>
+</ul>
+<hr>
+<h2 id="-configuring-a-splunk-alert-to-send-slack-notifications">
+  🔔 Configuring a Splunk Alert to Send Slack Notifications
+  <a class="heading-link" href="#-configuring-a-splunk-alert-to-send-slack-notifications">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="-step-1-create-a-new-alert">
+  🛠️ Step 1: Create a New Alert
+  <a class="heading-link" href="#-step-1-create-a-new-alert">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>Go to <strong>Splunk UI</strong> → <em>Settings</em> → <em>Searches, Reports, and Alerts</em>.</li>
+<li>Click <strong>Create New Alert</strong>.</li>
+<li><strong>Set the Trigger Condition</strong>:
+<ul>
+<li>Trigger if <strong>Number of Results &gt; 0</strong>.</li>
+<li>Set an appropriate schedule (e.g., every <strong>5 minutes</strong>).</li>
+</ul>
+</li>
+</ol>
+<h3 id="-step-2-configure-the-slack-alert-action">
+  🔗 Step 2: Configure the Slack Alert Action
+  <a class="heading-link" href="#-step-2-configure-the-slack-alert-action">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li><strong>Enable Slack Alert action</strong> in Splunk.</li>
+<li><strong>Set up a Slack Webhook URL</strong> (replace with your actual webhook):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">https:</span><span class="c1">//hooks.slack.com/services/YOUR/SLACK/WEBHOOK
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>Use the following Slack message format</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;🚀 *Successful SSH Login Alert*\n👤 *User:* $result.user$\n🖥️ *DEST Host:* $result.host$\n🌐 *SRC IP:* $result.ip$\n🔑 *Method:* $result.auth_method$\n⏰ *Time:* $result.formatted_time$&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ol start="4">
+<li><strong>Save &amp; Enable the Alert!</strong> 🎉</li>
+</ol>
+<hr>
+<h2 id="-example-slack-notification-output">
+  ✅ Example Slack Notification Output
+  <a class="heading-link" href="#-example-slack-notification-output">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>When triggered, Slack will receive a message like this:</p>
+<pre tabindex="0"><code>🚀 Successful SSH Login Alert  
+👤 User: james  
+🖥️ DEST Host: 10.10.10.10  
+🌐 SRC IP: 10.10.10.100  
+🔑 Method: publickey  
+⏰ Time: 2025-03-16 15:14:59  
+</code></pre><hr>
+<h2 id="-final-thoughts">
+  🎯 Final Thoughts
+  <a class="heading-link" href="#-final-thoughts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>By setting up this Splunk alert, you ensure <strong>real-time monitoring</strong> of SSH logins while improving security visibility. You can modify the query to:</p>
+<p>✅ <strong>Include more details</strong> (e.g., failed logins, geolocation lookup).<br>
+✅ <strong>Trigger different actions</strong> (e.g., email alerts, automated responses).</p>
+<p>🔹 <strong>Now your Slack is your security dashboard!</strong> 🚀🔐</p>
 
-
-### 📝 Explanation:
-
-- **Filters logs** to find SSH logins (**password/public key authentication**).
-- **Extracts key details** using `rex` (**regex extraction**):  
-  - 🔹 `user`: **Username**  
-  - 🌐 `ip`: **Source IP**  
-  - 🔑 `auth_method`: **Authentication method**  
-  - 🖥️ `host`: **Destination machine**  
-- **Formats the timestamp** into `YYYY-MM-DD HH:MM:SS` using `strftime()`.
-- **Constructs the Slack message** with **emojis for better readability**.
-
-
-
-
-
-
-
-
-## 🚀 Introduction
-Monitoring SSH login activity is crucial for security. This guide walks you through setting up a **Splunk alert** that detects **successful SSH logins** and sends **formatted Slack notifications** with useful details like user, source IP, destination host, authentication method, and timestamp.
-
----
-
-## 🎯 Splunk Query to Detect Successful SSH Logins
-We use a **Splunk search query** to detect successful SSH logins from `/var/log/auth.log`.
-
-```spl
-index=* &#34;Accepted password for&#34; OR &#34;Accepted publickey for&#34; source=&#34;/var/log/auth.log&#34; 
-| rex field=_raw &#34;Accepted (?&lt;auth_method&gt;\w+) for (?&lt;user&gt;\w+) from (?&lt;ip&gt;[\d\.]+) port (?&lt;port&gt;\d+)&#34;   
-| eval formatted_time=strftime(_time, &#34;%Y-%m-%d %H:%M:%S&#34;) 
-| table formatted_time host user ip auth_method port  
-| eval slack_message=&#34;🚀 *Successful SSH Login Alert*\n👤 *User:* `&#34;.user.&#34;`\n🖥️ *DEST Host:* `&#34;.host.&#34;`\n🌐 *SRC IP:* `&#34;.ip.&#34;`\n🔑 *Method:* `&#34;.auth_method.&#34;`\n⏰ *Time:* `&#34;.formatted_time.&#34;`&#34;
-📝 Explanation:
-Filters logs to find SSH logins (password/public key authentication).
-Extracts key details using rex (regex extraction):
-user: Username
-ip: Source IP
-auth_method: Authentication method
-host: Destination machine
-Formats the timestamp into YYYY-MM-DD HH:MM:SS using strftime().
-Constructs the Slack message with emojis for better readability.
-🔔 Configuring a Splunk Alert to Send Slack Notifications
-Step 1: Create a New Alert
-Go to Splunk UI → Settings → Searches, Reports, and Alerts.
-Click Create New Alert.
-Set Trigger Condition:
-Trigger if Number of Results &gt; 0.
-Set the appropriate schedule (e.g., every 5 minutes).
-Step 2: Configure the Slack Alert Action
-Enable Slack Alert action in Splunk.
-Set up a Slack Webhook URL (replace with your actual webhook):
-json
-Copy
-Edit
-https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
-Use the following Slack message format:
-json
-Copy
-Edit
-{
-  &#34;text&#34;: &#34;&#34;&#34;🚀 *Successful SSH Login Alert*
-👤 User: $result.user$ 🖥️ DEST Host: $result.host$ 🌐 SRC IP: $result.ip$ 🔑 Method: $result.auth_method$ ⏰ Time: $result.formatted_time$&#34;&#34;&#34; }
-
-yaml
-Copy
-Edit
-4. **Save &amp; Enable the Alert!** 🎉
-
----
-
-## ✅ Example Slack Notification Output
-Once the alert triggers, Slack will receive a message like this:
-
-🚀 Successful SSH Login Alert 👤 User: james 🖥️ DEST Host: 10.10.10.10 🌐 SRC IP: 10.10.10.100 🔑 Method: publickey ⏰ Time: 2025-03-16 15:14:59
-
-yaml
-Copy
-Edit
-
----
-
-## 🎯 Final Thoughts
-By setting up this Splunk alert, you ensure **real-time monitoring** of SSH logins while **improving security visibility**. You can modify the query to:
-- **Include more details** (e.g., failed logins, geolocation lookup).
-- **Trigger different actions** (e.g., email alerts, automated responses).
-
-🔹 **Now your Slack is your security dashboard!** 🚀🔐
-</code></pre>
       </div>
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Creating a Soc Siem"
 date: 2025-02-27T23:54:08+07:00
-draft: True
+draft: true
 title: "Creating a SOC SIEM"
 date: 2025-02-27
 tags: ["SIEM", "SOC", "Security", "Wazuh", "Graylog", "Grafana", "ArcherySec"]
@@ -135,4 +135,3 @@ To further improve my **SOC SIEM**, I plan to:
 
 Building a **SOC SIEM** from scratch is challenging but rewarding. By integrating **Wazuh, Graylog, Grafana, Node Exporter, and ArcherySec**, I’ve created a robust security monitoring system.
 
-💡 **What’s next?** I’d love to hear how you’re building your SIEM! Drop a comment below and share your thoughts.

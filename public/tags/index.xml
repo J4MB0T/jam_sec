@@ -6,13 +6,41 @@
     <description>Recent content in Tags on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Mar 2025 22:52:55 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 22 Mar 2025 23:12:42 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automation</title>
       <link>http://localhost:1313/jam_sec/tags/automation/</link>
-      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <pubDate>Sat, 22 Mar 2025 23:12:42 +0800</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DNS Monitoring</title>
+      <link>http://localhost:1313/jam_sec/tags/dns-monitoring/</link>
+      <pubDate>Sat, 22 Mar 2025 23:12:42 +0800</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/dns-monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/jam_sec/tags/security/</link>
+      <pubDate>Sat, 22 Mar 2025 23:12:42 +0800</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Splunk</title>
+      <link>http://localhost:1313/jam_sec/tags/splunk/</link>
+      <pubDate>Sat, 22 Mar 2025 23:12:42 +0800</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/splunk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat Detection</title>
+      <link>http://localhost:1313/jam_sec/tags/threat-detection/</link>
+      <pubDate>Sat, 22 Mar 2025 23:12:42 +0800</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/threat-detection/</guid>
       <description></description>
     </item>
     <item>
@@ -44,13 +72,6 @@
       <description></description>
     </item>
     <item>
-      <title>Security</title>
-      <link>http://localhost:1313/jam_sec/tags/security/</link>
-      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>SIEM</title>
       <link>http://localhost:1313/jam_sec/tags/siem/</link>
       <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
@@ -62,13 +83,6 @@
       <link>http://localhost:1313/jam_sec/tags/slack-alerts/</link>
       <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/slack-alerts/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Splunk</title>
-      <link>http://localhost:1313/jam_sec/tags/splunk/</link>
-      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/splunk/</guid>
       <description></description>
     </item>
     <item>
@@ -97,6 +111,41 @@
       <link>http://localhost:1313/jam_sec/tags/vsphere/</link>
       <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ArcherySec</title>
+      <link>http://localhost:1313/jam_sec/tags/archerysec/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/archerysec/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grafana</title>
+      <link>http://localhost:1313/jam_sec/tags/grafana/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/grafana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graylog</title>
+      <link>http://localhost:1313/jam_sec/tags/graylog/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/graylog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SOC</title>
+      <link>http://localhost:1313/jam_sec/tags/soc/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/soc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wazuh</title>
+      <link>http://localhost:1313/jam_sec/tags/wazuh/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/wazuh/</guid>
       <description></description>
     </item>
     <item>
@@ -144,15 +193,36 @@
     <item>
       <title>Network Scanner</title>
       <link>http://localhost:1313/jam_sec/tags/network-scanner/</link>
-      <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
+      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/network-scanner/</guid>
       <description></description>
     </item>
     <item>
       <title>Nmap</title>
       <link>http://localhost:1313/jam_sec/tags/nmap/</link>
-      <pubDate>Mon, 26 Aug 2024 20:47:22 +0000</pubDate>
+      <pubDate>Tue, 27 Aug 2024 19:31:20 +0000</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/nmap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/jam_sec/tags/linux/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metasplitable</title>
+      <link>http://localhost:1313/jam_sec/tags/metasplitable/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/metasplitable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Penetration-Testing</title>
+      <link>http://localhost:1313/jam_sec/tags/penetration-testing/</link>
+      <pubDate>Sun, 25 Aug 2024 19:12:12 +0000</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/penetration-testing/</guid>
       <description></description>
     </item>
   </channel>
