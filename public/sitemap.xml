@@ -3,18 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/jam_sec/tags/automation/</loc>
-    <lastmod>2025-03-06T00:53:40+07:00</lastmod>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/cybersecurity/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/incident-response/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/</loc>
-    <lastmod>2025-03-06T00:53:40+07:00</lastmod>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/logging/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/monitoring/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/posts/</loc>
-    <lastmod>2025-03-06T00:53:40+07:00</lastmod>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/snapshots/</loc>
-    <lastmod>2025-03-06T00:53:40+07:00</lastmod>
+    <loc>http://localhost:1313/jam_sec/tags/security/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/siem/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/slack-alerts/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/splunk/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/posts/splunk-ssh-alert/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/ssh/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/tags/</loc>
+    <lastmod>2025-03-16T22:52:55+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/tags/snapshots/</loc>
     <lastmod>2025-03-06T00:53:40+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/tags/terraform/</loc>
@@ -26,36 +56,6 @@
     <loc>http://localhost:1313/jam_sec/posts/vsphere-snapshots/</loc>
     <lastmod>2025-03-06T00:53:40+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/archerysec/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/categories/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/posts/creating-a-soc-siem/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/categories/cybersecurity/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/grafana/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/graylog/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/security/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/siem/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/soc/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/jam_sec/tags/wazuh/</loc>
-    <lastmod>2025-02-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/jam_sec/posts/terraform/</loc>
     <lastmod>2025-02-18T18:19:49+13:00</lastmod>
   </url><url>
@@ -64,6 +64,9 @@
   </url><url>
     <loc>http://localhost:1313/jam_sec/tags/vm/</loc>
     <lastmod>2025-02-18T18:19:49+13:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/jam_sec/categories/</loc>
+    <lastmod>2025-02-04T21:19:10+13:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/jam_sec/tags/homelab/</loc>
     <lastmod>2025-02-04T21:19:10+13:00</lastmod>

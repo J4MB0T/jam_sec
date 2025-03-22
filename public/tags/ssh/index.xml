@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cybersecurity on JAM_SEC</title>
-    <link>http://localhost:1313/jam_sec/tags/cybersecurity/</link>
-    <description>Recent content in Cybersecurity on JAM_SEC</description>
+    <title>SSH on JAM_SEC</title>
+    <link>http://localhost:1313/jam_sec/tags/ssh/</link>
+    <description>Recent content in SSH on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Mar 2025 22:52:55 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/jam_sec/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/jam_sec/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Splunk SSH Alert</title>
       <link>http://localhost:1313/jam_sec/posts/splunk-ssh-alert/</link>

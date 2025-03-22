@@ -6,8 +6,15 @@
     <description>Recent content in Automation on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Mar 2025 00:53:40 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 22:52:55 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Splunk SSH Alert</title>
+      <link>http://localhost:1313/jam_sec/posts/splunk-ssh-alert/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/posts/splunk-ssh-alert/</guid>
+      <description>Creating an SSH alert via Slack</description>
+    </item>
     <item>
       <title>vSphere Snapshots</title>
       <link>http://localhost:1313/jam_sec/posts/vsphere-snapshots/</link>

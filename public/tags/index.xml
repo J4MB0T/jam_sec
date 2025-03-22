@@ -6,13 +6,76 @@
     <description>Recent content in Tags on JAM_SEC</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Mar 2025 00:53:40 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 22:52:55 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/jam_sec/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automation</title>
       <link>http://localhost:1313/jam_sec/tags/automation/</link>
-      <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybersecurity</title>
+      <link>http://localhost:1313/jam_sec/tags/cybersecurity/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Incident Response</title>
+      <link>http://localhost:1313/jam_sec/tags/incident-response/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/incident-response/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logging</title>
+      <link>http://localhost:1313/jam_sec/tags/logging/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/logging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitoring</title>
+      <link>http://localhost:1313/jam_sec/tags/monitoring/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/jam_sec/tags/security/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SIEM</title>
+      <link>http://localhost:1313/jam_sec/tags/siem/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/siem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Slack Alerts</title>
+      <link>http://localhost:1313/jam_sec/tags/slack-alerts/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/slack-alerts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Splunk</title>
+      <link>http://localhost:1313/jam_sec/tags/splunk/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/splunk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>http://localhost:1313/jam_sec/tags/ssh/</link>
+      <pubDate>Sun, 16 Mar 2025 22:52:55 +0700</pubDate>
+      <guid>http://localhost:1313/jam_sec/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
@@ -34,55 +97,6 @@
       <link>http://localhost:1313/jam_sec/tags/vsphere/</link>
       <pubDate>Thu, 06 Mar 2025 00:53:40 +0700</pubDate>
       <guid>http://localhost:1313/jam_sec/tags/vsphere/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ArcherySec</title>
-      <link>http://localhost:1313/jam_sec/tags/archerysec/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/archerysec/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Grafana</title>
-      <link>http://localhost:1313/jam_sec/tags/grafana/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/grafana/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Graylog</title>
-      <link>http://localhost:1313/jam_sec/tags/graylog/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/graylog/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>http://localhost:1313/jam_sec/tags/security/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SIEM</title>
-      <link>http://localhost:1313/jam_sec/tags/siem/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/siem/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SOC</title>
-      <link>http://localhost:1313/jam_sec/tags/soc/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/soc/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Wazuh</title>
-      <link>http://localhost:1313/jam_sec/tags/wazuh/</link>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/jam_sec/tags/wazuh/</guid>
       <description></description>
     </item>
     <item>
