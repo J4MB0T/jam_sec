@@ -103,7 +103,6 @@ variable "vm_names" {
 ```
 🔥 **Why this rocks:**  
 - Stores all VM names in one place for easy changes  
-- Uses variables so we **never hardcode credentials**  
 
 ---
 
