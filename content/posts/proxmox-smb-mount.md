@@ -152,6 +152,6 @@ umount -l /mnt/qnap-backup
 
 ## Conclusion
 
-You have successfully mounted an SMB share to your Proxmox Backup Server. This setup allows you to use network-attached storage for your Proxmox backups, providing additional storage capacity and flexibility for your backup strategy.
+Yo have successfully mounted an SMB share to your Proxmox Backup Server. This setup allows you to use network-attached storage for your Proxmox backups, providing additional storage capacity and flexibility for your backup strategy.
 
 For production environments, consider implementing additional monitoring to ensure the mount remains available and functional.
