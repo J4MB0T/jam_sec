@@ -1,4 +1,4 @@
-name: Deploy Hugo Site
+name: GitHub Pages
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Setup Hugo
+      - name: Set up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
@@ -37,11 +37,9 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: ./public
-          retention-days: 1
 
   deploy:
     environment:
