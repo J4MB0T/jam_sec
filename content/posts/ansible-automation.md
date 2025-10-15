@@ -1,10 +1,10 @@
 ---
 title: "Getting Started with Ansible Automation"
 date: 2025-10-15T20:36:00+01:00
-draft: true
+draft: false
 tags: [ansible, automation, devops, configuration-management]
 categories: ["DevOps", "Automation"]
-authors: ["James Bothwell"]
+authors: ["James"]
 ---
 
 ## Introduction to Ansible
