@@ -792,6 +792,8 @@ a:hover {
 .diagram .d-acc-t { fill: var(--link); }
 .diagram .d-box { fill: var(--bg); stroke: currentColor; stroke-width: 1.4; }
 .diagram .d-ok { fill: var(--ok-bg); stroke: var(--ok-line); }
+.diagram .d-plan { stroke: var(--soft); stroke-dasharray: 5 4; }
+.diagram .d-fail { stroke: var(--bad); }
 .diagram .d-chip { fill: var(--code-bg); stroke: var(--code-line); stroke-width: 1; }
 .diagram .d-t-other { fill: var(--t-other); stroke: var(--pane-line); }
 .diagram .d-t-infra { fill: var(--t-infrastructure); stroke: var(--pane-line); }
