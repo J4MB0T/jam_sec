@@ -1,0 +1,13 @@
+{{- /* Inline SVG diagram from assets/diagrams/<name>.svg, with a caption stating what it shows.
+       Usage: {{< diagram name="wazuh-silent-chain" caption="..." >}} */ -}}
+{{- $name := .Get "name" -}}
+{{- with resources.Get (printf "diagrams/%s.svg" $name) -}}
+<figure class="diagram">
+  {{ .Content | safeHTML }}
+  {{- with $.Get "caption" }}
+  <figcaption>{{ . }}</figcaption>
+  {{- end }}
+</figure>
+{{- else -}}
+{{- errorf "diagram %q not found in assets/diagrams (%s)" $name $.Position -}}
+{{- end -}}

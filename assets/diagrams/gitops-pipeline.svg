@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 470" role="img" aria-label="Pipeline: the Git repo describes three steps. A cloud-init template is built by hand once, with Packer planned to replace that. Terraform clones the template into a VM after a plan is read. Ansible configures the VM after a check-mode diff is read. The result is a configured host.">
+<defs>
+<marker id="gp-a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="gp-c" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-acc" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="gp-x" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-bad" d="M0,0 L10,5 L0,10 z"/></marker>
+</defs>
+<rect class="d-box" x="16" y="10" width="368" height="46" rx="6"/>
+<text x="30" y="31" class="d-b">Git repo</text>
+<text x="30" y="48" class="d-s">Terraform code · Ansible roles · build notes</text>
+<path class="d-line" d="M40,56 V345"/>
+<text x="48" y="77" class="d-s">describes all three</text>
+<rect class="d-box" x="64" y="86" width="320" height="78" rx="6"/>
+<rect class="d-chip d-t-other" x="76" y="98" width="82" height="22" rx="11"/>
+<text x="117.0" y="113" class="d-b" text-anchor="middle">Template</text>
+<rect class="d-chip d-plan" x="240" y="98" width="132" height="22" rx="11"/>
+<text x="306.0" y="113" class="d-m" text-anchor="middle">Packer: planned</text>
+<text x="76" y="138">Cloud-init base image, built by hand once</text>
+<text x="76" y="154" class="d-s">documented qm steps, reused by every clone</text>
+<path class="d-line" d="M40,125 H62" marker-end="url(#gp-a)"/>
+<rect class="d-box" x="64" y="196" width="320" height="78" rx="6"/>
+<rect class="d-chip d-t-infra" x="76" y="208" width="84" height="22" rx="11"/>
+<text x="118.0" y="223" class="d-b" text-anchor="middle">Terraform</text>
+<rect class="d-chip" x="226" y="208" width="146" height="22" rx="11"/>
+<text x="299.0" y="223" class="d-m" text-anchor="middle">plan, read, apply</text>
+<text x="76" y="248">Clones it into a VM: CPU, RAM, disk, VLAN</text>
+<text x="76" y="264" class="d-s">stops once the VM boots</text>
+<path class="d-line" d="M40,235 H62" marker-end="url(#gp-a)"/>
+<rect class="d-box" x="64" y="306" width="320" height="78" rx="6"/>
+<rect class="d-chip d-t-auto" x="76" y="318" width="70" height="22" rx="11"/>
+<text x="111.0" y="333" class="d-b" text-anchor="middle">Ansible</text>
+<rect class="d-chip" x="197" y="318" width="175" height="22" rx="11"/>
+<text x="284.5" y="333" class="d-m" text-anchor="middle">--check --diff, apply</text>
+<text x="76" y="358">Hardening, agents, services on the new VM</text>
+<text x="76" y="374" class="d-s">never creates VMs</text>
+<path class="d-line" d="M40,345 H62" marker-end="url(#gp-a)"/>
+<path class="d-line" d="M224,164 V196" marker-end="url(#gp-a)"/>
+<text x="234" y="184" class="d-s">template</text>
+<path class="d-line" d="M224,274 V306" marker-end="url(#gp-a)"/>
+<text x="234" y="294" class="d-s">VM exists, boots</text>
+<path class="d-line" d="M224,384 V416" marker-end="url(#gp-a)"/>
+<text x="234" y="404" class="d-s">configured</text>
+<rect class="d-box d-ok" x="64" y="418" width="320" height="40" rx="6"/>
+<text x="224" y="443" class="d-b" text-anchor="middle">Configured host</text>
+</svg>
