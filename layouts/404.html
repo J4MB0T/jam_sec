@@ -1,0 +1,12 @@
+{{ define "title" }}Page not found · {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<div class="wrap">
+  <article class="page">
+    <h1 class="page-title">404: page not found</h1>
+    <div class="prose">
+      <p>Nothing is published at this address. Browse the <a href="{{ "posts/" | relLangURL }}">post list</a> or go back to the <a href="{{ "/" | relLangURL }}">home page</a>.</p>
+    </div>
+  </article>
+</div>
+{{ end }}

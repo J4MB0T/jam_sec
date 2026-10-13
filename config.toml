@@ -6,6 +6,7 @@ theme = "hugo-coder"
 [params]
   author = "JAM_SEC"
   description = "James' personal website"
+  tagline = "Cyber homelab and ethical hacking development"
   keywords = "blog,developer,personal,cyber,security"
   info = "Testing and personal development"
   avatarURL = "index.jpg"
@@ -64,7 +65,7 @@ theme = "hugo-coder"
   author = "authors"
 
   [[params.social]]
-  name = "Github"
+  name = "GitHub"
   icon = "fa fa-github"
   weight = 1
   url = "https://github.com/J4MB0T"

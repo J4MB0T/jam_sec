@@ -1,0 +1,4 @@
+{{- /* Returns a post's topic: front matter `topic`, else data/topics.toml, else "Other". */ -}}
+{{- $map := site.Data.topics | default (dict) -}}
+{{- $topic := .Params.topic | default (index $map (lower .File.ContentBaseName)) | default "Other" -}}
+{{- return $topic -}}

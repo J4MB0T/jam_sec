@@ -1,0 +1,88 @@
+{{- /* The post list as a packet inspector: filter bar, packet table, details and bytes panes. */ -}}
+{{- $asc := (where site.RegularPages "Section" "posts").ByDate -}}
+{{- $total := len $asc -}}
+{{- $desc := $asc.Reverse -}}
+{{- $topics := slice -}}
+{{- range $asc -}}
+  {{- $topics = $topics | append (partial "post-topic.html" .) -}}
+{{- end -}}
+{{- $topics = $topics | uniq | sort -}}
+
+{{- if $total }}
+{{- $first := index $desc 0 -}}
+{{- $firstTags := $first.Params.tags | default slice -}}
+<div class="packets" data-packets>
+  <div class="filterbar">
+    <span class="filter-label" id="filter-label">Display filter</span>
+    <div class="expr" data-expr aria-labelledby="filter-label">blog</div>
+    <div class="chips" data-chips role="group" aria-label="Show posts about" hidden>
+      <button type="button" class="chip" data-topic="" aria-pressed="true">All</button>
+      {{- range $topics }}
+      <button type="button" class="chip t-{{ urlize . }}" data-topic="{{ . }}" aria-pressed="false">{{ . }}</button>
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="table-scroll">
+    <table class="packet-table">
+      <caption class="sr-only">Posts, newest first. Select a row to see its details.</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="c-no">No.</th>
+          <th scope="col" class="c-date">Date</th>
+          <th scope="col" class="c-topic">Topic</th>
+          <th scope="col" class="c-title">Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $i, $p := $desc }}
+        {{- $no := sub $total $i }}
+        {{- $topic := partial "post-topic.html" $p }}
+        {{- $tags := $p.Params.tags | default slice }}
+        <tr class="pkt t-{{ urlize $topic }}{{ if eq $i 0 }} is-selected{{ end }}"{{ if eq $i 0 }} aria-current="true"{{ end }}
+            data-no="{{ $no }}"
+            data-title="{{ $p.Title }}"
+            data-date="{{ $p.Date.Format "2 January 2006" }}"
+            data-topic="{{ $topic }}"
+            data-tags="{{ delimit $tags ", " }}"
+            data-summary="{{ $p.Params.summary }}"
+            data-length="{{ $p.ReadingTime }} min read"
+            data-url="{{ $p.RelPermalink }}">
+          <td class="c-no">{{ $no }}</td>
+          <td class="c-date"><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006-01-02" }}</time></td>
+          <td class="c-topic">{{ $topic }}</td>
+          <th scope="row" class="c-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></th>
+        </tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="inspect">
+    <section class="pane" aria-labelledby="details-heading">
+      <h2 class="pane-head" id="details-heading">Details</h2>
+      <div class="tree">
+        <div class="tree-head">
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Post <span data-d="no">{{ $total }}</span>: <span data-d="title">{{ $first.Title }}</span></span>
+        </div>
+        <dl class="tree-body">
+          <div><dt>Published</dt><dd data-d="date">{{ $first.Date.Format "2 January 2006" }}</dd></div>
+          <div><dt>Topic</dt><dd data-d="topic">{{ partial "post-topic.html" $first }}</dd></div>
+          <div><dt>Length</dt><dd data-d="length">{{ $first.ReadingTime }} min read</dd></div>
+          <div data-f="tags"{{ if not $firstTags }} hidden{{ end }}><dt>Tags</dt><dd data-d="tags">{{ delimit $firstTags ", " }}</dd></div>
+          <div data-f="summary"{{ if not $first.Params.summary }} hidden{{ end }}><dt>Summary</dt><dd data-d="summary">{{ $first.Params.summary }}</dd></div>
+        </dl>
+        <p class="tree-link"><a data-d="link" href="{{ $first.RelPermalink }}">Read this post</a></p>
+      </div>
+    </section>
+
+    <section class="pane" data-bytes-pane aria-hidden="true" hidden>
+      <h2 class="pane-head">Bytes</h2>
+      <div class="bytes" data-bytes></div>
+    </section>
+  </div>
+</div>
+{{- $js := resources.Get "js/packets.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{- end }}
