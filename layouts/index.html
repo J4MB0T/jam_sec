@@ -1,0 +1,9 @@
+{{ define "title" }}{{ .Site.Title }}{{ with .Site.Params.tagline }} · {{ . }}{{ end }}{{ end }}
+
+{{ define "content" }}
+<div class="wrap">
+  {{ partial "packets.html" . }}
+</div>
+{{ end }}
+
+{{ define "status" }}{{ partial "packets-status.html" . }}{{ end }}

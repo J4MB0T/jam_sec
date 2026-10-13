@@ -1,0 +1,4 @@
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $total := len $posts -}}
+<span>Displayed: <span data-count role="status">{{ $total }}</span> of {{ $total }}</span>
+<span>Selected: <span data-selected>No. {{ $total }}</span></span>

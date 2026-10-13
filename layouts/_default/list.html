@@ -1,0 +1,30 @@
+{{ define "title" }}{{ if eq .Kind "term" }}{{ .Data.Singular | title }}: {{ end }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<div class="wrap">
+  <header class="page-head">
+    <p class="back"><a href="{{ "posts/" | relLangURL }}">All posts</a></p>
+    <h1 class="page-title">{{ if eq .Kind "term" }}<span class="muted">{{ .Data.Singular | title }}:</span> {{ end }}{{ .Title }}</h1>
+  </header>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  <div class="table-scroll">
+    <table class="packet-table simple">
+      <caption class="sr-only">Pages in {{ .Title }}, newest first</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="c-date">Date</th>
+          <th scope="col" class="c-title">Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{- range .Pages.ByDate.Reverse }}
+        <tr class="pkt t-{{ urlize (partial "post-topic.html" .) }}">
+          <td class="c-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></td>
+          <th scope="row" class="c-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></th>
+        </tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+</div>
+{{ end }}

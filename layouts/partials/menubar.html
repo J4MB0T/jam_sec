@@ -1,0 +1,20 @@
+<header class="menubar">
+  <div class="wrap menubar-inner">
+    <div class="brand-group">
+      {{- if .IsHome }}
+      <h1 class="brand"><a href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a></h1>
+      {{- else }}
+      <p class="brand"><a href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a></p>
+      {{- end }}
+      {{- with .Site.Params.tagline }}
+      <p class="tagline">{{ . }}</p>
+      {{- end }}
+    </div>
+    <nav class="nav" aria-label="Main">
+      {{- range .Site.Menus.main }}
+      {{- $url := .URL | relLangURL }}
+      <a href="{{ $url }}"{{ if and (ne $url "/") (hasPrefix $.RelPermalink $url) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+    </nav>
+  </div>
+</header>

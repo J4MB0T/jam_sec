@@ -1,0 +1,20 @@
+# Topic for each post, keyed by file name (lower case, no extension).
+# Used by the packet list on the home page and /posts/ for colours and filters.
+# A post can override this with `topic: "..."` in its front matter.
+# Posts listed in neither place show up under "Other".
+
+ansible-automation = "Automation"
+automating-dns-threat-detection = "Detection"
+check-mk-monitoring = "Infrastructure"
+creating-a-soc-siem = "Detection"
+first-post = "Notes"
+nmap-dashboard = "Recon"
+nmap-dashboardv1 = "Recon"
+pfsense = "Infrastructure"
+phishing-detector = "Detection"
+proxmox-smb-mount = "Infrastructure"
+splunk-ssh-alert = "Detection"
+telegram-brain-dump-pipeline = "Automation"
+terraform = "Infrastructure"
+vsphere-snapshots = "Infrastructure"
+wazuh = "Detection"

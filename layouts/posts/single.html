@@ -1,0 +1,46 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<div class="wrap">
+  <div class="post-grid">
+    <header class="post-head">
+      <p class="back"><a href="{{ "posts/" | relLangURL }}">All posts</a></p>
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+
+    <aside class="post-side" aria-label="About this post">
+      <section class="pane">
+        <h2 class="pane-head">Details</h2>
+        <dl class="kv">
+          <div><dt>Published</dt><dd><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></dd></div>
+          <div><dt>Length</dt><dd>{{ .ReadingTime }} min read</dd></div>
+          <div><dt>Topic</dt><dd>{{ partial "post-topic.html" . }}</dd></div>
+          {{- with .GetTerms "tags" }}
+          <div>
+            <dt>Tags</dt>
+            <dd>
+              <ul class="taglist">
+                {{- range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                {{- end }}
+              </ul>
+            </dd>
+          </div>
+          {{- end }}
+        </dl>
+      </section>
+      {{- $toc := .TableOfContents }}
+      {{- if in $toc "<li>" }}
+      <section class="pane outline">
+        <h2 class="pane-head">Outline</h2>
+        <div class="outline-body">{{ $toc }}</div>
+      </section>
+      {{- end }}
+    </aside>
+
+    <article class="prose post-body">
+      {{ .Content }}
+    </article>
+  </div>
+</div>
+{{ end }}

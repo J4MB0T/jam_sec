@@ -1,0 +1,15 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<div class="wrap">
+  <header class="page-head">
+    <p class="back"><a href="{{ "posts/" | relLangURL }}">All posts</a></p>
+    <h1 class="page-title">{{ .Title }}</h1>
+  </header>
+  <ul class="taglist taglist-large">
+    {{- range .Data.Terms.Alphabetical }}
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}<span class="count">{{ .Count }}</span></a></li>
+    {{- end }}
+  </ul>
+</div>
+{{ end }}

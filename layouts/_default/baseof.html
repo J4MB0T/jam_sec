@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  {{ partial "head/meta-tags.html" . }}
+  <meta name="theme-color" content="#eceff3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c212b" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{{ with .Params.canonicalUrl }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
+  <link rel="preload" href="/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/martian-mono-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  {{ $css := slice (resources.Get "css/chroma.css") (resources.Get "css/jamsec.css") | resources.Concat "css/site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ partial "head/custom-icons.html" . }}
+  {{ partial "head/alternative-output-formats.html" . }}
+  {{ if .IsHome }}{{ partial "head/hugo-generator.html" . }}{{ end }}
+  {{ partial "head/extensions.html" . }}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ partial "menubar.html" . }}
+  <main id="main" class="main">
+    {{ block "content" . }}{{ end }}
+  </main>
+  <footer class="footer">
+    <div class="statusbar">
+      <div class="wrap statusbar-inner">
+        <div class="status">{{ block "status" . }}{{ end }}</div>
+        <div class="status-links">
+          {{- $seen := slice -}}
+          {{- range .Site.Params.social -}}
+            {{- if not (in $seen .url) -}}
+              {{- $seen = $seen | append .url -}}
+              <a href="{{ .url }}" rel="me noopener">{{ .name | default "Link" }}</a>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+    <div class="wrap colophon">
+      © {{ with .Site.Params.since }}{{ . }} – {{ end }}{{ now.Year }} {{ .Site.Params.author }}. Built with <a href="https://gohugo.io/" rel="noopener">Hugo</a> on the <a href="https://github.com/luizdepra/hugo-coder/" rel="noopener">Coder</a> theme.
+    </div>
+  </footer>
+</body>
+</html>

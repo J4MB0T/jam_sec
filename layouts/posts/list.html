@@ -1,0 +1,10 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+
+{{ define "content" }}
+<div class="wrap">
+  <h1 class="sr-only">{{ .Title }}</h1>
+  {{ partial "packets.html" . }}
+</div>
+{{ end }}
+
+{{ define "status" }}{{ partial "packets-status.html" . }}{{ end }}
