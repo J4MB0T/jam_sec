@@ -1,0 +1,9 @@
+# Display labels for tags that Hugo would otherwise title-case wrongly.
+# Key is the tag as it appears in the URL (lower case); anything not listed uses Hugo's default.
+check_mk = "Check_MK"
+configuration-management = "Configuration Management"
+devops = "DevOps"
+n8n = "n8n"
+nas = "NAS"
+smb = "SMB"
+vsphere = "vSphere"
