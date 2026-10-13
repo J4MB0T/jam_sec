@@ -8,7 +8,7 @@
   </header>
   <ul class="taglist taglist-large">
     {{- range .Data.Terms.Alphabetical }}
-    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}<span class="count">{{ .Count }}</span></a></li>
+    <li><a href="{{ .Page.RelPermalink }}">{{ partial "term-label.html" .Page }}<span class="count">{{ .Count }}</span></a></li>
     {{- end }}
   </ul>
 </div>

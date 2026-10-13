@@ -2,7 +2,10 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-author: "Your Name"
+author: "James"
+# Topic colours the post in the packet list: Automation, Detection, Infrastructure, Recon or Notes.
+# Leave it out and the post falls back to data/topics.toml, then "Other".
+topic: "Notes"
 tags: 
   - "Tag1"
   - "Tag2"

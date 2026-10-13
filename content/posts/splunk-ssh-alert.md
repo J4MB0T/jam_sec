@@ -7,8 +7,6 @@ tags: ["Splunk", "SSH", "Security", "SIEM", "Monitoring", "Logging", "Slack Aler
 summary: "Learn how to configure Splunk to detect successful SSH logins and send formatted alerts to Slack."
 ---
 
-# 🚀 Splunk SSH Login Alert
-
 Monitoring SSH login activity is crucial for security. This guide walks you through setting up a **Splunk alert** that detects **successful SSH logins** and sends **formatted Slack notifications** with essential details.
 
 ---

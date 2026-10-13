@@ -7,8 +7,6 @@ tags: ["Splunk", "Security", "DNS Monitoring", "Threat Detection", "Automation"]
 summary: "Learn how to set up a Splunk query and alert to monitor questionable DNS queries, filter out reputable domains, and send automated reports via Slack."
 ---
 
-# 🚀 Automating DNS Threat Detection with Splunk
-
 ## **Introduction**
 
 Monitoring DNS traffic is a crucial aspect of network security. Malicious actors often use **DNS tunneling, command-and-control (C2) domains, and suspicious lookups** to evade detection.  

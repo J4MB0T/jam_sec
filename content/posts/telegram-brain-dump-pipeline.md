@@ -7,8 +7,6 @@ tags: ["n8n", "Telegram", "Automation", "Homelab", "Notion", "Ollama", "Whisper"
 summary: "How I built a voice-note-to-task pipeline: send a Telegram message from anywhere, and a self-hosted n8n workflow transcribes it, sorts it into tasks, ideas, notes and journal entries, and files it in Notion. No inbound ports, no subscriptions."
 ---
 
-# 🧠 Brain Dump to Notion: A Self-Hosted Telegram Voice Note Pipeline
-
 ## **The problem**
 
 Ideas show up at bad moments: driving, at work, halfway through dinner. By the time I'm at a keyboard they're gone, or they end up in a pile of notes I never sort.
