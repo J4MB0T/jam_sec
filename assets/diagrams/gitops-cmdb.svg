@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 404" role="img" aria-label="CMDB write path: a fleet playbook ends with a cmdb_sync step that cannot fail the play and upserts a NetBox device record, so a record exists only once the host is configured. A planned daily check would compare Wazuh agents, AD computer objects and NetBox devices; a mismatch is an unwatched or undocumented host.">
+<defs>
+<marker id="gm-a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="gm-c" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-acc" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="gm-x" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-bad" d="M0,0 L10,5 L0,10 z"/></marker>
+</defs>
+<rect class="d-box" x="16" y="10" width="368" height="46" rx="6"/>
+<text x="30" y="31" class="d-b">Fleet playbook</text>
+<text x="30" y="48" class="d-s">baseline, agents and services on the host</text>
+<path class="d-line" d="M200,56 V90" marker-end="url(#gm-a)"/>
+<text x="210" y="78" class="d-s">runs last, can&#x27;t fail the play</text>
+<rect class="d-box" x="16" y="92" width="368" height="46" rx="6"/>
+<text x="30" y="113" class="d-b">cmdb_sync</text>
+<text x="30" y="130" class="d-s">name, IP, platform, role, last configured</text>
+<path class="d-line" d="M200,138 V170" marker-end="url(#gm-a)"/>
+<text x="210" y="158" class="d-s">upsert</text>
+<rect class="d-box d-ok" x="16" y="172" width="368" height="46" rx="6"/>
+<text x="30" y="193" class="d-b">NetBox device record</text>
+<text x="30" y="210" class="d-s">appears only once the host is configured</text>
+<text x="16" y="254" class="d-s">Planned, not built yet: a daily comparison</text>
+<rect class="d-box d-plan" x="16" y="266" width="112" height="44" rx="6"/>
+<text x="28" y="286" class="d-b">Wazuh</text>
+<text x="28" y="302" class="d-s">active agents</text>
+<path class="d-line" d="M72,310 V340" marker-end="url(#gm-a)"/>
+<rect class="d-box d-plan" x="144" y="266" width="112" height="44" rx="6"/>
+<text x="156" y="286" class="d-b">AD</text>
+<text x="156" y="302" class="d-s">computers</text>
+<path class="d-line" d="M200,310 V340" marker-end="url(#gm-a)"/>
+<rect class="d-box d-plan" x="272" y="266" width="112" height="44" rx="6"/>
+<text x="284" y="286" class="d-b">NetBox</text>
+<text x="284" y="302" class="d-s">devices</text>
+<path class="d-line" d="M328,310 V340" marker-end="url(#gm-a)"/>
+<rect class="d-box d-plan" x="16" y="342" width="368" height="50" rx="6"/>
+<text x="200" y="363" class="d-b" text-anchor="middle">Compare the three lists</text>
+<text x="200" y="381" class="d-s" text-anchor="middle">a mismatch is an unwatched host or an undocumented one</text>
+</svg>

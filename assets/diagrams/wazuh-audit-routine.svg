@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 376" role="img" aria-label="Audit routine: the Ansible audit reads each host&#x27;s agent state file and the manager lists its agents. Both are reconciled against the inventory to produce a gap list. The Ansible role enrols only hosts missing a key file, and the audit is re-run to confirm.">
+<defs>
+<marker id="wr-a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="wr-c" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-acc" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="wr-x" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-bad" d="M0,0 L10,5 L0,10 z"/></marker>
+</defs>
+<rect class="d-box" x="28" y="10" width="176" height="66" rx="6"/>
+<text x="42" y="32" class="d-b">Agent side</text>
+<text x="42" y="50" class="d-s">Ansible audit, read-only</text>
+<text x="42" y="67" class="d-s">state file: connected?</text>
+<rect class="d-box" x="212" y="10" width="176" height="66" rx="6"/>
+<text x="226" y="32" class="d-b">Manager side</text>
+<text x="226" y="50" class="d-m">agent_control -l</text>
+<text x="226" y="67" class="d-s">Active or not, per agent</text>
+<path class="d-line" d="M116,76 V118" marker-end="url(#wr-a)"/>
+<text x="126" y="102" class="d-s">per host</text>
+<path class="d-line" d="M300,76 V118" marker-end="url(#wr-a)"/>
+<text x="310" y="102" class="d-s">per agent</text>
+<rect class="d-box" x="28" y="118" width="360" height="50" rx="6"/>
+<text x="208" y="140" class="d-b" text-anchor="middle">Reconcile against the inventory</text>
+<text x="208" y="157" class="d-s" text-anchor="middle">anything not Active is a coverage gap</text>
+<path class="d-line" d="M208,168 V208" marker-end="url(#wr-a)"/>
+<text x="218" y="192" class="d-s">gaps</text>
+<rect class="d-box" x="28" y="208" width="360" height="50" rx="6"/>
+<text x="208" y="230" class="d-b" text-anchor="middle">Gap list</text>
+<text x="208" y="247" class="d-s" text-anchor="middle">hosts that aren&#x27;t reporting</text>
+<path class="d-line" d="M208,258 V298" marker-end="url(#wr-a)"/>
+<text x="218" y="282" class="d-s">run the role</text>
+<rect class="d-box" x="28" y="298" width="360" height="66" rx="6"/>
+<text x="208" y="320" class="d-b" text-anchor="middle">Ansible role</text>
+<text x="208" y="338" class="d-s" text-anchor="middle">enrols only if the key file is missing</text>
+<text x="208" y="355" class="d-s" text-anchor="middle">then re-run the audit to confirm</text>
+</svg>

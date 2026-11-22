@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 326" role="img" aria-label="Drift loop: the repo&#x27;s intended state is applied to the live lab after review. A read-only audit and a baseline check-mode run produce findings where reality differs from intent. The fix goes back into the role and the repo. Hand-fixing the host is the path to avoid.">
+<defs>
+<marker id="gd-a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="gd-c" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-acc" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="gd-x" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-bad" d="M0,0 L10,5 L0,10 z"/></marker>
+</defs>
+<rect class="d-box" x="16" y="12" width="200" height="50" rx="6"/>
+<text x="30" y="33" class="d-b">Git repo</text>
+<text x="30" y="51" class="d-s">intended state</text>
+<rect class="d-box" x="16" y="122" width="200" height="50" rx="6"/>
+<text x="30" y="143" class="d-b">Live lab</text>
+<text x="30" y="161" class="d-s">hosts as they really are</text>
+<rect class="d-box" x="16" y="262" width="200" height="50" rx="6"/>
+<text x="30" y="283" class="d-b">Findings</text>
+<text x="30" y="301" class="d-s">where reality ≠ intent</text>
+<path class="d-line" d="M44,62 V120" marker-end="url(#gd-a)"/>
+<text x="54" y="88" class="d-s">review the plan / --check,</text>
+<text x="54" y="104" class="d-s">then apply</text>
+<path class="d-line" d="M44,172 V260" marker-end="url(#gd-a)"/>
+<text x="54" y="208" class="d-s">read-only audit</text>
+<text x="54" y="225" class="d-m">baseline --check</text>
+<path class="d-no d-no-line" d="M204,262 V176" marker-end="url(#gd-x)"/>
+<path class="d-xmark" d="M197,211 L211,225 M211,211 L197,225"/>
+<text x="222" y="210" class="d-bad">hand-fix</text>
+<text x="222" y="226" class="d-bad">on the box</text>
+<path class="d-line d-acc" d="M216,287 H330 V37 H218" marker-end="url(#gd-c)"/>
+<text x="322" y="134" class="d-b d-acc-t" text-anchor="end">fix the role,</text>
+<text x="322" y="152" class="d-b d-acc-t" text-anchor="end">then commit</text>
+</svg>

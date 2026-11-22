@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 388" role="img" aria-label="Four things must hold before an event reaches the manager: the agent service runs, the agent is enrolled, the network path is open on both ports, and the manager lists it as Active. systemctl only shows the first. Check 1 covers the middle two from the agent side; Check 3 covers the last from the manager.">
+<defs>
+<marker id="wc-a" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="wc-c" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-acc" d="M0,0 L10,5 L0,10 z"/></marker>
+<marker id="wc-x" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path class="d-head d-head-bad" d="M0,0 L10,5 L0,10 z"/></marker>
+</defs>
+<rect class="d-box d-ok" x="16" y="10" width="226" height="66" rx="6"/>
+<text x="30" y="32" class="d-b">Agent service running</text>
+<text x="30" y="50" class="d-s">systemctl says active (running)</text>
+<text x="30" y="67" class="d-s d-sm">looks healthy from here</text>
+<rect class="d-box" x="16" y="110" width="226" height="66" rx="6"/>
+<text x="30" y="132" class="d-b">Enrolled with the manager</text>
+<text x="30" y="150" class="d-s">key file exists and isn&#x27;t empty</text>
+<text x="30" y="167" class="d-bad d-sm">fails: skipped, or wrong manager</text>
+<rect class="d-box" x="16" y="210" width="226" height="66" rx="6"/>
+<text x="30" y="232" class="d-b">Network path open</text>
+<text x="30" y="250" class="d-s">ports 1515 and 1514 both allowed</text>
+<text x="30" y="267" class="d-bad d-sm">fails: only one is allowed</text>
+<rect class="d-box" x="16" y="310" width="226" height="66" rx="6"/>
+<text x="30" y="332" class="d-b">Manager lists it Active</text>
+<text x="30" y="350" class="d-s">in the manager&#x27;s agent list</text>
+<text x="30" y="367" class="d-bad d-sm">fails: never connected</text>
+<path class="d-line" d="M129,76 V110" marker-end="url(#wc-a)"/>
+<text x="139" y="98" class="d-s">enrols once</text>
+<path class="d-line" d="M129,176 V210" marker-end="url(#wc-a)"/>
+<text x="139" y="198" class="d-s">sends events</text>
+<path class="d-line" d="M129,276 V310" marker-end="url(#wc-a)"/>
+<text x="139" y="298" class="d-s">delivers them</text>
+<path class="d-line d-grey" d="M248,14 H256 V72 H248"/>
+<text x="266" y="36" class="d-s">all that</text>
+<text x="266" y="52" class="d-s">systemctl can</text>
+<text x="266" y="68" class="d-s">tell you</text>
+<path class="d-line d-acc" d="M248,114 H256 V272 H248"/>
+<text x="266" y="180" class="d-b d-acc-t">Check 1</text>
+<text x="266" y="197" class="d-s">agent state file</text>
+<text x="266" y="213" class="d-s">says connected</text>
+<path class="d-line d-acc" d="M248,314 H256 V372 H248"/>
+<text x="266" y="334" class="d-b d-acc-t">Check 3</text>
+<text x="266" y="351" class="d-m">agent_control -l</text>
+<text x="266" y="367" class="d-s">shows Active</text>
+</svg>

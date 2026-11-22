@@ -51,6 +51,7 @@
   --ok-ink: #1d3a12;
   --code-bg: #f4f6f9;
   --code-line: #d3d9e3;
+  --bad: #b3261e;
 
   --t-detection: #e4e0ff;
   --t-infrastructure: #d8ebff;
@@ -81,6 +82,7 @@
     --ok-ink: #cfeec2;
     --code-bg: #1a1f28;
     --code-line: #2f3746;
+    --bad: #ff9b8f;
 
     --t-detection: #2a2552;
     --t-infrastructure: #1b3350;
@@ -758,3 +760,49 @@ a:hover {
   .packet-table td { padding: 10px 10px; }
   .prose { font-size: 16.5px; }
 }
+
+/* Diagrams: inline SVG from assets/diagrams, placed with the diagram shortcode. */
+.diagram {
+  margin: 1.8rem 0;
+}
+.diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  color: var(--ink);
+}
+.diagram figcaption {
+  max-width: 460px;
+  margin-top: 0.6rem;
+  color: var(--soft);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.diagram text {
+  fill: currentColor;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+.diagram .d-b { font-weight: 650; }
+.diagram .d-s { fill: var(--soft); font-size: 12px; }
+.diagram .d-sm { font-size: 11.5px; }
+.diagram .d-m { font-family: var(--mono); font-size: 11px; }
+.diagram .d-bad { fill: var(--bad); }
+.diagram .d-acc-t { fill: var(--link); }
+.diagram .d-box { fill: var(--bg); stroke: currentColor; stroke-width: 1.4; }
+.diagram .d-ok { fill: var(--ok-bg); stroke: var(--ok-line); }
+.diagram .d-plan { stroke: var(--soft); stroke-dasharray: 5 4; }
+.diagram .d-fail { stroke: var(--bad); }
+.diagram .d-chip { fill: var(--code-bg); stroke: var(--code-line); stroke-width: 1; }
+.diagram .d-t-other { fill: var(--t-other); stroke: var(--pane-line); }
+.diagram .d-t-infra { fill: var(--t-infrastructure); stroke: var(--pane-line); }
+.diagram .d-t-auto { fill: var(--t-automation); stroke: var(--pane-line); }
+.diagram .d-line { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.diagram .d-acc { stroke: var(--link); stroke-width: 1.8; }
+.diagram .d-grey { stroke: var(--soft); }
+.diagram .d-no { fill: none; stroke: var(--bad); stroke-width: 1.8; stroke-dasharray: 5 4; }
+.diagram .d-xmark { fill: none; stroke: var(--bad); stroke-width: 2; stroke-linecap: round; }
+.diagram .d-head { fill: currentColor; }
+.diagram .d-head-acc { fill: var(--link); }
+.diagram .d-head-bad { fill: var(--bad); }
