@@ -1,7 +1,7 @@
-# Topic for each post, keyed by file name (lower case, no extension).
+# Topic for each older post, keyed by file name (lower case, no extension).
 # Used by the packet list on the home page and /posts/ for colours and filters.
-# A post can override this with `topic: "..."` in its front matter.
-# Posts listed in neither place show up under "Other".
+# New posts get `topic: "..."` in their front matter from the archetype, which wins over this file.
+# Posts with neither show up under "Other".
 
 ansible-automation = "Automation"
 automating-dns-threat-detection = "Detection"

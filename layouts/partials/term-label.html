@@ -1,0 +1,6 @@
+{{- /* Display label for a tag page: data/tags.toml, else Hugo's own title. Other pages use their title. */ -}}
+{{- $label := .LinkTitle -}}
+{{- if and (eq .Kind "term") (eq .Data.Plural "tags") -}}
+  {{- $label = index (site.Data.tags | default (dict)) (path.Base .Path) | default .LinkTitle -}}
+{{- end -}}
+{{- return $label -}}

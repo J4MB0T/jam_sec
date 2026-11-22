@@ -8,8 +8,6 @@ authors: ["James"]
 summary: "A comprehensive guide to mounting SMB shares on Proxmox Backup Server for automated backups."
 ---
 
-# Mounting SMB Shares on Proxmox Backup Server
-
 This guide provides step-by-step instructions for mounting an SMB share on a Proxmox Backup Server (PBS) to use as a backup destination.
 
 ## Prerequisites

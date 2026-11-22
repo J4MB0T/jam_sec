@@ -21,7 +21,7 @@
             <dd>
               <ul class="taglist">
                 {{- range . }}
-                <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+                <li><a href="{{ .RelPermalink }}">{{ partial "term-label.html" . }}</a></li>
                 {{- end }}
               </ul>
             </dd>

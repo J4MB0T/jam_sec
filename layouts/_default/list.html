@@ -1,15 +1,15 @@
-{{ define "title" }}{{ if eq .Kind "term" }}{{ .Data.Singular | title }}: {{ end }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "title" }}{{ if eq .Kind "term" }}{{ .Data.Singular | title }}: {{ end }}{{ partial "term-label.html" . }} · {{ .Site.Title }}{{ end }}
 
 {{ define "content" }}
 <div class="wrap">
   <header class="page-head">
     <p class="back"><a href="{{ "posts/" | relLangURL }}">All posts</a></p>
-    <h1 class="page-title">{{ if eq .Kind "term" }}<span class="muted">{{ .Data.Singular | title }}:</span> {{ end }}{{ .Title }}</h1>
+    <h1 class="page-title">{{ if eq .Kind "term" }}<span class="muted">{{ .Data.Singular | title }}:</span> {{ end }}{{ partial "term-label.html" . }}</h1>
   </header>
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
   <div class="table-scroll">
     <table class="packet-table simple">
-      <caption class="sr-only">Pages in {{ .Title }}, newest first</caption>
+      <caption class="sr-only">Pages in {{ partial "term-label.html" . }}, newest first</caption>
       <thead>
         <tr>
           <th scope="col" class="c-date">Date</th>
